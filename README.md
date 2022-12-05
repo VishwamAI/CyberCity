@@ -16,7 +16,7 @@ pentration testing   in one base
 
 -> wp scan
 
--> FTP
+-> URLSCAN.IO
 
 -> SMBclient
 
