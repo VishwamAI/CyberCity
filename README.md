@@ -2,7 +2,7 @@
 pentration testing   in one base
 
 
-## This batch implement the tools in one tool of pentration testing  batch implement tools are 
+## This batch implement the tools in one tool of pentration testing 
 
 -> Brup Suite
 
