@@ -6,24 +6,16 @@ pentration testing   in one base
 
 -> design is completing soon 
 
--> Brup Suite
+-> Forencics
 
--> Nmap
+-> exploits
 
--> ProFTPD
+-> encryption & decryption
 
--> Jeenkins
+-> CTF explanation
 
--> wireshark
+-> tutorial with an example of free in all countries
 
--> wp scan
-
--> URLSCAN.IO
-
--> SMBclient
-
--> Local powershell
-
--> exploit db
+-> world over pass the tool 
 
 -> with the tutorial of explanation of that tool of pentration testing implementation
