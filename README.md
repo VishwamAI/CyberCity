@@ -12,8 +12,6 @@ pentration testing   in one base
 
 -> encryption & decryption
 
--> CTF explanation
-
 -> tutorial with an example of free in all countries
 
 -> world over pass the tool 
