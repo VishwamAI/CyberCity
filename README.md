@@ -24,4 +24,4 @@ making 1 pentration app as well as we are re-direct to that tool with pre-instal
 coding part will update soon
 
 
-![Menu of software tools](https://user-images.githubusercontent.com/81065703/208828910-488f7aad-0b2b-4ba6-bc0d-35d36a4809b7.png)
+![menu of forensics](https://user-images.githubusercontent.com/81065703/208831898-60864167-4f58-4c18-96bd-cf01e1533ebb.png)
