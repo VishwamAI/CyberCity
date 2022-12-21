@@ -10,9 +10,9 @@ pentration testing in one base
 
 -> create main code parts 
 
--> create demo session
-
 -> Test and debug the code
+
+-> create demo session
 
 -> create documentation
 
