@@ -6,7 +6,11 @@ pentration testing in one base
 
 -> design is completed ✅
 
+-> create test part 
+
 -> create a tool with the code 
+
+-> create demo session
 
 -> Test and debug the code
 
