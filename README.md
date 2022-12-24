@@ -35,5 +35,8 @@ pentration testing in one base
 making 1 pentration app as well as we are pre-install and redirected the apps process in all os we build the tool as soon as possible
 coding part will update soon our designs are completed as well as what is the uses documentation is also update
 
+### 1) Designs
 
-![menu of forensics](https://user-images.githubusercontent.com/81065703/208831898-60864167-4f58-4c18-96bd-cf01e1533ebb.png)
+![image](https://user-images.githubusercontent.com/81065703/209428685-2be9c938-f33e-4c8f-bf12-412ff7b9fd55.png)
+
+![image](https://user-images.githubusercontent.com/81065703/209428740-2e300497-39df-4f16-9ea5-eddf7720a310.png)
