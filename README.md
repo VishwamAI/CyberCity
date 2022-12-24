@@ -4,7 +4,7 @@ pentration testing in one base
 
 ### This batch implement the tools in one tool of pentration testing 
 
--> design is completed ✅
+-> design ✅
 
 ### -> create test code parts (under process)
 
