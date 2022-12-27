@@ -77,3 +77,18 @@ It sounds like you are planning to create a forensic analysis tool for Linux sys
 
 
 ![image](https://user-images.githubusercontent.com/81065703/209428740-2e300497-39df-4f16-9ea5-eddf7720a310.png)
+
+1) urlscan.io: urlscan.io is a website that allows users to scan websites and web applications for security vulnerabilities and other issues.
+
+2) VulnHub: VulnHub is a website that provides a platform for users to test their hacking skills on vulnerable virtual machines.
+
+3) OPSWAT: OPSWAT is a company that provides a range of security products and services, including tools for detecting and mitigating cyber threats.
+
+4) LOBAS: LOBAS is a website that provides a database of default passwords for various types of devices and systems.
+
+5) exploit-db: exploit-db is a database of exploits and vulnerabilities that is maintained by the Offensive Security team.
+
+6) FireEye: FireEye is a cybersecurity company that provides a range of products and services, including tools for detecting and responding to cyber threats.
+
+7) PeeringDB: PeeringDB is a database of internet service providers (ISPs) and their peering policies. It is used by ISPs and other organizations to facilitate interconnection and peering agreements.
+
