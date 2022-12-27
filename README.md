@@ -92,3 +92,12 @@ It sounds like you are planning to create a forensic analysis tool for Linux sys
 
 7) PeeringDB: PeeringDB is a database of internet service providers (ISPs) and their peering policies. It is used by ISPs and other organizations to facilitate interconnection and peering agreements.
 
+![Screenshot from 2022-12-27 23-50-40](https://user-images.githubusercontent.com/81065703/209707172-c19beac5-3ff7-4742-ae8a-21a7be3dfe75.png)
+
+1) Nmap: Nmap is a network scanning tool that is used to identify live hosts, open ports, and running services on a network. It is often used by network administrators and cybersecurity professionals to assess the security of a network and identify potential vulnerabilities.
+
+2) Metasploit: Metasploit is a framework for developing and executing exploits. It is often used by cybersecurity professionals to test the security of systems and identify vulnerabilities that can be exploited.
+
+3) Burp Suite: Burp Suite is a suite of tools for testing the security of web applications. It includes tools for testing for common vulnerabilities such as SQL injection and cross-site scripting (XSS), as well as tools for manipulating and analyzing HTTP traffic.
+
+4) Hydra: Hydra is a password cracking tool that is used to try to recover passwords from hashes or to guess passwords using brute force techniques. It is often used by cybersecurity professionals to test the strength of passwords and to identify weak or easily guessable passwords.
