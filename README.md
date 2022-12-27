@@ -57,4 +57,23 @@ In addition to these tools and skills, it is also important for pentesters to ha
 
 ![image](https://user-images.githubusercontent.com/81065703/209428685-2be9c938-f33e-4c8f-bf12-412ff7b9fd55.png)
 
+It sounds like you are planning to create a forensic analysis tool for Linux systems. There are a number of tools that you have listed that are commonly used in forensic analysis, including:
+
+1) Autopsy: Autopsy is a digital forensics tool that is used to analyze disk images and recover deleted or hidden files.
+
+2) Snort: Snort is a network intrusion detection system (IDS) that is used to detect and alert on malicious activity on a network.
+
+3) Redline: Redline is a tool for analyzing and collecting data from Windows and MacOS systems.
+
+4) FTK Imager: FTK Imager is a tool for creating disk images and extracting data from disk images for forensic analysis.
+
+5) Volatility: Volatility is a memory forensics tool that is used to analyze the contents of a computer's RAM to identify artifacts and other evidence of malicious activity.
+
+6) Wireshark: Wireshark is a network protocol analyzer that is used to capture and analyze network traffic.
+
+7) ExifTool: ExifTool is a tool for reading, writing, and manipulating metadata in image and video files.
+
+8) VirusTotal: VirusTotal is a tool for analyzing and detecting malware, and can be used to scan files and URLs to identify malicious content.
+
+
 ![image](https://user-images.githubusercontent.com/81065703/209428740-2e300497-39df-4f16-9ea5-eddf7720a310.png)
