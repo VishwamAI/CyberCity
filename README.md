@@ -48,6 +48,10 @@ To conduct a pentest, it is typically necessary to have a wide range of tools an
 6) Capture the flag (CTF) explanation: CTFs are competitions in which participants attempt to solve challenges related to computer security, often using a combination of the tools and skills described above.
 
 In addition to these tools and skills, it is also important for pentesters to have a strong understanding of computer systems and networks, as well as the laws and ethical principles that govern the practice of pentesting.
+
+7) 1version we start in linux after update we will do it afer updates 
+
+## students we are 
 ### -> Designs
 
 ![image](https://user-images.githubusercontent.com/81065703/209428685-2be9c938-f33e-4c8f-bf12-412ff7b9fd55.png)
