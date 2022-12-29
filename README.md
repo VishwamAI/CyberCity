@@ -6,7 +6,7 @@ pentration testing in one base
 
 -> design ✅
 
-### -> create test code parts of researching (under process)
+### -> create test code parts of researching (...completing soon...)
 
 -> create main code parts 
 
