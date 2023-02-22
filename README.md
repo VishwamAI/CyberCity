@@ -33,7 +33,7 @@ pentration testing in one base
 
 
 making 1 pentration app as well as we are pre-install and redirected the apps process in all os we build the tool as soon as possible
-To conduct a pentest, it is typically necessary to have a wide range of tools and skills, including:
+To conduct a pentest, it is typically necessary to have a wide range of tools and skills, including
 
 1) Forensics tools: These are used to analyze and recover data from systems and devices, and can be used to identify the cause of a security breach or to gather evidence in an investigation.
 
