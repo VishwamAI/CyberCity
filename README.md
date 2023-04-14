@@ -4,100 +4,69 @@ pentration testing in one base
 
 ### This batch implement the tools in one tool of pentration testing 
 
--> design ✅
+- design ✅
 
-### -> create test code parts of researching (...completing soon...)
+- Front-End ✅
 
--> create main code parts 
+- Back-End(comming soon...)
 
--> Test and debug the code
+### Here is an explanation of each submenu and its items:
 
--> create demo session
+### Encryption and decryption: This submenu contains tools for encrypting and decrypting data. 
+The items in this submenu are:
 
--> create documentation
+- CyberChef: A web-based tool for encoding, decoding, and analyzing data.
+- Rot13: A simple form of encryption that rotates the letters in a message by 13 places.
+- Decode: A tool for decoding different types of encoded data.
+- Encode-Decode: A tool for both encoding and decoding data.
+### Web tools: This submenu contains tools for analyzing and testing websites. 
+The items in this submenu are:
+- Urlscan.io: A tool for analyzing and scanning websites for potential threats.
+- VulnHub: A platform for practicing penetration testing on vulnerable virtual machines.
+- Opswat: A tool for analyzing and scanning files for malware.
+- Lobas: A tool for testing web applications for vulnerabilities.
 
--> sucessfully compile the code
+### Software tools: This submenu contains tools for testing and exploiting software. 
+The items in this submenu are:
 
--> update newer versions in the code
+- Nmap: A tool for network exploration and security auditing.
+- Metasploit: A platform for developing, testing, and using exploit code against vulnerable targets.
+- BurpSuite: A tool for testing web applications for security vulnerabilities.
+- Hydra: A tool for performing brute force attacks on login credentials.
 
--> one of the design tool
+### Hardware tools: This submenu contains tools for testing and exploiting hardware devices.     
+The items in this submenu are:
 
-### Explanation part:
+- Hak5: A company that produces tools and devices for penetration testing and wireless security.
+- Pine64: A company that produces single-board computers and other hardware devices for developers and enthusiasts.
 
-![image](https://user-images.githubusercontent.com/81065703/209428315-ff7c0925-e065-48c4-b6e7-0de940c0c2fc.png)
+### Training platforms: This submenu contains platforms for practicing and learning cybersecurity skills. 
+The items in this submenu are:
 
-![Screenshot_20221224_021623](https://user-images.githubusercontent.com/81065703/209428358-320721a1-543b-4e24-b755-0c20c435e8d8.png)
+- TryHackMe: A platform for learning cybersecurity skills through interactive challenges.
+- HackTheBox: A platform for practicing penetration testing on vulnerable virtual machines.
 
+### CTF platforms: This submenu contains platforms for participating in cybersecurity capture the flag (CTF)     competitions. 
+The items in this submenu are:
 
-![image](https://user-images.githubusercontent.com/81065703/209428278-6920fcc6-e353-4f2e-a1e4-2d0a22d18b07.png)
+- PicoCTF: A CTF platform designed for beginners.
+- CTFWithGoogle: A platform for participating in CTF competitions hosted by Google.
 
+### explanation on limited tools right now
 
-making 1 pentration app as well as we are pre-install and redirected the apps process in all os we build the tool as soon as possible
-To conduct a pentest, it is typically necessary to have a wide range of tools and skills, including
+- Our tool is designed to be a one-stop-shop for all things related to cybersecurity. It includes a variety of submenus, such as encryption and decryption, webtools, software tools, hardware tools, training platforms, and CTF platforms. These submenus contain some of the most popular and useful tools in each category, such as CyberChef for encryption and decryption, Nmap for software tools, Hak5 for hardware tools, and TryHackMe for training platforms.
 
-1) Forensics tools: These are used to analyze and recover data from systems and devices, and can be used to identify the cause of a security breach or to gather evidence in an investigation.
+- Our tool is user-friendly and easy to navigate, making it accessible to anyone, regardless of their level of expertise in cybersecurity. Whether you are just starting out in the field or are a seasoned cybersecurity professional, our tool has something for everyone. We have carefully selected the tools in each submenu to provide a balanced mix of functionality and usability, while also being mindful of our audience's limited time and resources.
 
-2) Web tools: These are used to test the security of web applications and web servers, and can include tools for testing for common vulnerabilities such as SQL injection and cross-site scripting (XSS).
+- In the future, we plan to expand our tool by adding more submenus and tools to keep up with the rapidly changing landscape of cybersecurity. We are also planning to integrate a backend component that will allow users to save and share their results with others.
 
-3) Encryption and decryption tools: These are used to secure and decrypt data, and can be used to test the strength of an organization's encryption protocols.
-
-4) Software tools: These are used to test the security of operating systems, applications, and networks, and can include tools for testing for vulnerabilities, misconfigurations, and other issues.
-
-5) Hardware tools: These are used to test the security of physical devices and systems, and can include tools for testing the security of devices such as routers, switches, and servers.
-
-6) Capture the flag (CTF) explanation: CTFs are competitions in which participants attempt to solve challenges related to computer security, often using a combination of the tools and skills described above.
-
-In addition to these tools and skills, it is also important for pentesters to have a strong understanding of computer systems and networks, as well as the laws and ethical principles that govern the practice of pentesting.
-
-7) 1version we start in linux after update we will do it afer updates 
-
-###  students we are
-
-### -> Designs
-
-![image](https://user-images.githubusercontent.com/81065703/209428685-2be9c938-f33e-4c8f-bf12-412ff7b9fd55.png)
-
-It sounds like you are planning to create a forensic analysis tool for Linux systems. There are a number of tools that you have listed that are commonly used in forensic analysis, including:
-
-1) Autopsy: Autopsy is a digital forensics tool that is used to analyze disk images and recover deleted or hidden files.
-
-2) Snort: Snort is a network intrusion detection system (IDS) that is used to detect and alert on malicious activity on a network.
-
-3) Redline: Redline is a tool for analyzing and collecting data from Windows and MacOS systems.
-
-4) FTK Imager: FTK Imager is a tool for creating disk images and extracting data from disk images for forensic analysis.
-
-5) Volatility: Volatility is a memory forensics tool that is used to analyze the contents of a computer's RAM to identify artifacts and other evidence of malicious activity.
-
-6) Wireshark: Wireshark is a network protocol analyzer that is used to capture and analyze network traffic.
-
-7) ExifTool: ExifTool is a tool for reading, writing, and manipulating metadata in image and video files.
-
-8) VirusTotal: VirusTotal is a tool for analyzing and detecting malware, and can be used to scan files and URLs to identify malicious content.
+- Overall, our tool is a valuable resource for anyone interested in cybersecurity, and we are excited to share it with the world.
 
 
-![image](https://user-images.githubusercontent.com/81065703/209428740-2e300497-39df-4f16-9ea5-eddf7720a310.png)
+### Gif of our front end part
 
-1) urlscan.io: urlscan.io is a website that allows users to scan websites and web applications for security vulnerabilities and other issues.
 
-2) VulnHub: VulnHub is a website that provides a platform for users to test their hacking skills on vulnerable virtual machines.
+### Backend coming soon....                                                                                       
 
-3) OPSWAT: OPSWAT is a company that provides a range of security products and services, including tools for detecting and mitigating cyber threats.
 
-4) LOBAS: LOBAS is a website that provides a database of default passwords for various types of devices and systems.
-
-5) exploit-db: exploit-db is a database of exploits and vulnerabilities that is maintained by the Offensive Security team.
-
-6) FireEye: FireEye is a cybersecurity company that provides a range of products and services, including tools for detecting and responding to cyber threats.
-
-7) PeeringDB: PeeringDB is a database of internet service providers (ISPs) and their peering policies. It is used by ISPs and other organizations to facilitate interconnection and peering agreements.
-
-![Screenshot from 2022-12-27 23-50-40](https://user-images.githubusercontent.com/81065703/209707172-c19beac5-3ff7-4742-ae8a-21a7be3dfe75.png)
-
-1) Nmap: Nmap is a network scanning tool that is used to identify live hosts, open ports, and running services on a network. It is often used by network administrators and cybersecurity professionals to assess the security of a network and identify potential vulnerabilities.
-
-2) Metasploit: Metasploit is a framework for developing and executing exploits. It is often used by cybersecurity professionals to test the security of systems and identify vulnerabilities that can be exploited.
-
-3) Burp Suite: Burp Suite is a suite of tools for testing the security of web applications. It includes tools for testing for common vulnerabilities such as SQL injection and cross-site scripting (XSS), as well as tools for manipulating and analyzing HTTP traffic.
-
-4) Hydra: Hydra is a password cracking tool that is used to try to recover passwords from hashes or to guess passwords using brute force techniques. It is often used by cybersecurity professionals to test the strength of passwords and to identify weak or easily guessable passwords.
+### Blog of our organization
