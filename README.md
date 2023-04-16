@@ -66,7 +66,7 @@ The items in this submenu are:
 ### Gif of our front end part
 [Screencast from 2023-04-16 09-12-53.webm](https://user-images.githubusercontent.com/81065703/232265334-e5076d55-8f2e-417e-90df-a65ddf314929.webm)
 
-secondary come with background it wrok in progress 
+secondary come with background it work in progress 
 
 ### Backend coming soon....                                                                                       
 
