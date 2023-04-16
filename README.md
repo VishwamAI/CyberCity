@@ -6,7 +6,7 @@ pentration testing in one base
 
 - design ✅
 
-- Front-End ✅
+- Front-End [some edit part is remaining...]
 
 - Back-End(comming soon...)
 
