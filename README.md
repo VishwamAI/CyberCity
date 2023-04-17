@@ -65,13 +65,16 @@ The items in this submenu are:
 
 ### Gif of our front end part
 GTK4.0
+
 [Screencast from 2023-04-16 09-12-53.webm](https://user-images.githubusercontent.com/81065703/232265334-e5076d55-8f2e-417e-90df-a65ddf314929.webm)
 
 GTK3.0 
+
 ....COMING SOON.....
 
 PYQT5 
- 
+
+[Screencast from 2023-04-17 13-58-35.webm](https://user-images.githubusercontent.com/81065703/232470552-38e8be2b-2e96-43ad-9786-0bb794446c4e.webm)
 
 ### Backend coming soon....                                                                                       
 
