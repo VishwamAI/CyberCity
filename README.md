@@ -64,18 +64,45 @@ The items in this submenu are:
 
 
 ### Gif of our front end part
-GTK4.0
+
+# GTK4.0
 
 [Screencast from 2023-04-16 09-12-53.webm](https://user-images.githubusercontent.com/81065703/232265334-e5076d55-8f2e-417e-90df-a65ddf314929.webm)
 
-GTK3.0 
 
-....COMING SOON.....
-
-PYQT5 
+# PYQT5 
 
 [Screencast from 2023-04-17 13-58-35.webm](https://user-images.githubusercontent.com/81065703/232470552-38e8be2b-2e96-43ad-9786-0bb794446c4e.webm)
 
+development stage 
+
+
+# Development
+
+| Folder | Description |
+| - | - |
+| src | Python,Rust Frontend |
+| assets | App assets folder |
+| assets/locales | App localizations |
+| target/release | Release build of the app |
+
+## Clone repo
+
+```sh
+git clone --recursive https://github.com/Exploit0xfffff/PenetrationApp
+```
+
+## Run app
+
+```sh
+cargo run
+```
+
+## Build app
+
+```sh
+cargo build --release
+```
 ### Backend coming soon....                                                                                       
 
 
