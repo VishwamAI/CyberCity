@@ -84,7 +84,7 @@ development stage
 | src | Python,Rust Frontend |
 | assets | App assets folder |
 | assets/locales | App localizations |
-| target/release | Release build of the app |
+| target/release | ...Comming soon..|
 
 ## Clone repo
 
