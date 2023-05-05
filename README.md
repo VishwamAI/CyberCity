@@ -81,7 +81,7 @@ development stage
 
 | Folder | Description |
 | - | - |
-| src | Python,Rust Frontend |
+| src | Python Frontend |
 | assets | App assets folder |
 | assets/locales | App localizations |
 | target/release | ...Comming soon..|
