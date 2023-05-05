@@ -86,23 +86,6 @@ development stage
 | assets/locales | App localizations |
 | target/release | ...Comming soon..|
 
-## Clone repo
-
-```sh
-git clone --recursive https://github.com/Exploit0xfffff/PenetrationApp
-```
-
-## Run app
-
-```sh
-cargo run
-```
-
-## Build app
-
-```sh
-cargo build --release
-```
 ### Backend coming soon....                                                                                       
 
 
