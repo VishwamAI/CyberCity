@@ -3,7 +3,7 @@ import os
 import gi
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
-from gi.repository import Gtk, Adw, Gio
+from gi.repository import Gtk, Adw, Gio,Gdk
         
 class MainWindow(Gtk.ApplicationWindow):
     def __init__(self, *args, **kwargs):
@@ -52,6 +52,16 @@ class MainWindow(Gtk.ApplicationWindow):
         CTF_platforms_submenu.append("PicoCTF", "app.picoCTF")
         CTF_platforms_submenu.append("CTFWithGoogle", "app.GoogleCTF")
         menu.append_submenu("CTF Platforms", CTF_platforms_submenu)
+
+        # Load CSS file
+        css_provider = Gtk.CssProvider()
+        css_provider.load_from_path('style.css')
+
+        # Apply CSS to window
+        display = Gdk.Display.get_default()
+        style_context = self.get_style_context()
+        style_context.add_provider_for_display(display, css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+        style_context.add_class("background")
 
         
         self.popover = Gtk.PopoverMenu()
