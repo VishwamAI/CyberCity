@@ -67,12 +67,7 @@ The items in this submenu are:
 
 # GTK4.0
 
-[Screencast from 2023-04-16 09-12-53.webm](https://user-images.githubusercontent.com/81065703/232265334-e5076d55-8f2e-417e-90df-a65ddf314929.webm)
-
-
-# PYQT5 
-
-[Screencast from 2023-04-17 13-58-35.webm](https://user-images.githubusercontent.com/81065703/232470552-38e8be2b-2e96-43ad-9786-0bb794446c4e.webm)
+ [Screencast from 2023-05-07 21-04-41.webm](https://user-images.githubusercontent.com/81065703/236687616-0e9e17ea-a3fd-47f5-9512-92417245690a.webm)
 
 development stage 
 
@@ -81,7 +76,7 @@ development stage
 
 | Folder | Description |
 | - | - |
-| src | Python Frontend |
+| src |  Frontend & Backend  |
 | assets | App assets folder |
 | assets/locales | App localizations |
 | target/release | ...Comming soon..|
