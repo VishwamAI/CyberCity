@@ -6,7 +6,7 @@ pentration testing in one base
 
 - design ✅
 
-- Front-End [some edit part is remaining...]
+- Front-End [...completing soon...]
 
 - Back-End(comming soon...)
 
@@ -79,7 +79,7 @@ development stage
 | src |  Frontend & Backend  |
 | assets | App assets folder |
 | assets/locales | App localizations |
-| target/release | ...Comming soon..|
+| target/release | ...coming soon v.1.0(alpha)...|
 
 ### Backend coming soon....                                                                                       
 
