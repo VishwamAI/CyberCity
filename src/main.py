@@ -59,11 +59,9 @@ class MainWindow(Gtk.ApplicationWindow):
 
         # Apply CSS to window
         display = Gdk.Display.get_default()
-        style_context = self.get_style_context()
-        style_context.add_provider_for_display(display, css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
-        style_context.add_class("background")
+        self.add_css_class("background")
+        Gtk.StyleContext.add_provider_for_display(display, css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
-        
         self.popover = Gtk.PopoverMenu()
         self.popover.set_menu_model(menu)
         self.header = Gtk.HeaderBar()  # Move this line up
@@ -84,6 +82,7 @@ class MyApp(Gtk.Application):
     def on_activate(self, app):
         self.win = MainWindow(application=app,title="Penetration App")
         self.win.present()
+
        
 if __name__ == "__main__":
     app = MyApp(application_id='org.example.GtkApplication')
