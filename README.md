@@ -67,10 +67,14 @@ The items in this submenu are:
 
 # GTK4.0
 
- [Screencast from 2023-05-07 21-04-41.webm](https://user-images.githubusercontent.com/81065703/236687616-0e9e17ea-a3fd-47f5-9512-92417245690a.webm)
+[Screencast from 2023-05-14 17-58-17.webm](https://github.com/Exploit0xfffff/PenetrationApp/assets/81065703/1d82d647-21e8-4978-a171-152777fcf13a)
 
-development stage 
+redirecting process is comming soon and development process developers can develop this program 
 
+```
+git clone https://github.com/Exploit0xfffff/PenetrationApp
+cd PenetrationApp/src/
+```
 
 # Development
 
@@ -81,7 +85,5 @@ development stage
 | assets/locales | App localizations |
 | target/release | ...coming soon v.1.0(alpha)...|
 
-### Backend coming soon....                                                                                       
+### v1.0 alpha coming soon                                                                                      
 
-
-### Blog of our organization
