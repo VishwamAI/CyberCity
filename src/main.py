@@ -4,7 +4,10 @@ import gi
 import webbrowser
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
-from gi.repository import Gtk, Adw, Gio, Gdk
+gi.require_version('Notify', '0.7')
+from gi.repository import Gtk,Gio, Gdk, Notify
+
+
 
 class MainWindow(Gtk.ApplicationWindow):
     def __init__(self, *args, **kwargs):
@@ -87,8 +90,6 @@ class MainWindow(Gtk.ApplicationWindow):
         ctf_menu.append_item(picoctf_action)
         ctf_menu.append_item(ctfwithgoogle_action)
         #End of CTF Platforms submenu
-        
-        
         # Create the SimpleAction objects and connect them to the functions
         self.cyberchef_action = Gio.SimpleAction.new("cyberchef", None)
         self.cyberchef_action.connect("activate", self.cyberchef)
@@ -185,7 +186,8 @@ class MainWindow(Gtk.ApplicationWindow):
         self.hamburger.set_popover(self.popover)
         self.hamburger.set_icon_name("open-menu-symbolic")
         self.header.pack_start(self.hamburger)  # Move this line down
-        
+        # Initialize the notification system
+        Notify.init("Penetration App")
    # Define the functions for encryption submenu action
     def cyberchef(self, action, param):
         webbrowser.open_new_tab("https://cyberchef.org/")
@@ -212,13 +214,20 @@ class MainWindow(Gtk.ApplicationWindow):
     # End of web tools submenu action
     # Define the functions for software submenu action
     def benmap(self, action, param):
-        print("benmap selected")
+        notification = Notify.Notification.new("Benmap", "Benmap has coming soon.")
+        notification.show()
+
     def Hellosploit(self, action, param):
-        print("Hellosploit selected")
+        notification = Notify.Notification.new("Hellosploit", "Hellosploit coming soon.")
+        notification.show()
+
     def cydra(self, action, param):
-        print("cydra selected")
+        notification = Notify.Notification.new("Cydra", "Cydra has coming soon.")
+        notification.show()
+
     def Brupsuite(self, action, param):
-        print("Brupsuite selected")
+        notification = Notify.Notification.new("Brupsuite", "Brupsuite has coming soon.")
+        notification.show()
     # End of software submenu action
     # Define the functions for hardware submenu action
     def Hak5(self, action, param):
