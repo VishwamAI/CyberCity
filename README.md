@@ -6,6 +6,7 @@ pentration testing in one base
 - set app icon 
 - creating deb package module & snap 
 - exe module for exe module we check and re-design those 
+### v2.0 Beta has coming soon
 - after that we have doing some applications development i.e Benmap,cydra,Hellosploit 
 - no changes for brupsuite 
 ### Here is an explanation of each submenu and its items:
