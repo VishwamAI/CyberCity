@@ -1,6 +1,7 @@
 import sys
 import os
 import gi
+import webbrowser
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 from gi.repository import Gtk, Adw, Gio, Gdk
@@ -32,11 +33,11 @@ class MainWindow(Gtk.ApplicationWindow):
         urlscan_action = Gio.MenuItem.new("Urlscan.io", "win.urlscan")
         vulnhub_action = Gio.MenuItem.new("Vulnhub", "win.vulnhub")
         opswat_action = Gio.MenuItem.new("OPSWAT", "win.opswat")
-        Lobas_action = Gio.MenuItem.new("Lobas", "win.lobas")
+        exploitdb_action = Gio.MenuItem.new("ExploitDB", "win.exploitdb")
         web_tools_menu.append_item(urlscan_action)
         web_tools_menu.append_item(vulnhub_action)
         web_tools_menu.append_item(opswat_action)
-        web_tools_menu.append_item(Lobas_action)
+        web_tools_menu.append_item(exploitdb_action)
         #End of Web tools submenu
         
         #software submenu
@@ -118,9 +119,9 @@ class MainWindow(Gtk.ApplicationWindow):
         self.opswat_action.connect("activate", self.opswat)
         self.add_action(self.opswat_action)
         
-        self.Lobas_action = Gio.SimpleAction.new("lobas", None)
-        self.Lobas_action.connect("activate", self.lobas)
-        self.add_action(self.Lobas_action)
+        self.exploitdb_action = Gio.SimpleAction.new("exploitdb", None)
+        self.exploitdb_action.connect("activate", self.exploitdb)
+        self.add_action(self.exploitdb_action)
         #End of Web tools submenu
         #Create the SimpleAction objects and connect them to the functions
         self.benmap_action = Gio.SimpleAction.new("benmap", None)
@@ -187,27 +188,27 @@ class MainWindow(Gtk.ApplicationWindow):
         
    # Define the functions for encryption submenu action
     def cyberchef(self, action, param):
-        print("cyberchef selected")
+        webbrowser.open_new_tab("https://cyberchef.org/")
 
     def Rot13(self, action, param):
-        print("Rot13 selected")
+        webbrowser.open_new_tab("https://rot13.com/")
 
     def decode(self, action, param):
-        print("decode selected")
+        webbrowser.open_new_tab("https://www.dcode.fr/")
 
     def encode(self, action, param):
-        print("encode selected")
+        webbrowser.open_new_tab("https://www.base64encode.org/")
     # End of encryption submenu action
     
     # Define the functions for web tools submenu action
     def urlscan(self, action, param):
-        print("urlscan selected")
+        webbrowser.open_new_tab("https://urlscan.io/")
     def vulnhub(self, action, param):
-        print("vulnhub selected")
+        webbrowser.open_new_tab("https://www.vulnhub.com/")
     def opswat(self, action, param):
-        print("opswat selected")
-    def lobas(self, action, param):
-        print("lobas selected")
+        webbrowser.open_new_tab("https://www.opswat.com/")
+    def exploitdb(self, action, param):
+        webbrowser.open_new_tab("https://www.exploit-db.com/")
     # End of web tools submenu action
     # Define the functions for software submenu action
     def benmap(self, action, param):
@@ -221,21 +222,21 @@ class MainWindow(Gtk.ApplicationWindow):
     # End of software submenu action
     # Define the functions for hardware submenu action
     def Hak5(self, action, param):
-        print("Hak5 selected")
+        webbrowser.open_new_tab("https://hak5.org/")
     def pine64(self, action, param):
-        print("pine64 selected")
+        webbrowser.open_new_tab("https://pine64.com/")
     # End of hardware submenu action
     # Define the functions for training platforms submenu action
     def tryhackme(self, action, param):
-        print("tryhackme selected")
+        webbrowser.open_new_tab("https://tryhackme.com/")
     def hackthebox(self, action, param):
-        print("hackthebox selected")
+        webbrowser.open_new_tab("https://www.hackthebox.com/")
     # End of training platforms submenu action
     # Define the functions for CTF platforms submenu action
     def picoctf(self, action, param):
-        print("picoctf selected")
+        webbrowser.open_new_tab("https://picoctf.org/")
     def ctfwithgoogle(self, action, param):
-        print("ctfwithgoogle selected")
+        webbrowser.open_new_tab("https://capturetheflag.withgoogle.com/")
     # End of CTF platforms submenu action
 class MyApp(Gtk.Application):
     def __init__(self, **kwargs):
