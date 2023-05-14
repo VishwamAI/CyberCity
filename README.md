@@ -66,7 +66,7 @@ The items in this submenu are:
 
 
 
-redirecting process is comming soon and development process developers can develop this program 
+our two gols are re-directing and pre-installation for beginners we have completed the task1 the task2 we find the more components and develop our tool 
 
 ```
 git clone https://github.com/Exploit0xfffff/PenetrationApp
