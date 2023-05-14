@@ -2,14 +2,12 @@
 pentration testing in one base
 
 
-### This batch implement the tools in one tool of pentration testing 
-
-- design ✅
-
-- Front-End [...completing soon...]
-
-- Back-End(comming soon...)
-
+### v1.0 alpha has completing some patches
+- set app icon 
+- creating deb package module & snap 
+- exe module for exe module we check and re-design those 
+- after that we have doing some applications development i.e Benmap,cydra,Hellosploit 
+- no changes for brupsuite 
 ### Here is an explanation of each submenu and its items:
 
 ### Encryption and decryption: This submenu contains tools for encrypting and decrypting data. 
@@ -24,15 +22,14 @@ The items in this submenu are:
 - Urlscan.io: A tool for analyzing and scanning websites for potential threats.
 - VulnHub: A platform for practicing penetration testing on vulnerable virtual machines.
 - Opswat: A tool for analyzing and scanning files for malware.
-- Lobas: A tool for testing web applications for vulnerabilities.
-
+- exploitdb: A tool for  Exploitation from CVE code 
 ### Software tools: This submenu contains tools for testing and exploiting software. 
 The items in this submenu are:
 
-- Nmap: A tool for network exploration and security auditing.
-- Metasploit: A platform for developing, testing, and using exploit code against vulnerable targets.
+- BenNmap: A tool for network exploration and security auditing.
+- Hellosploit: A platform for developing, testing, and using exploit code against vulnerable targets.
 - BurpSuite: A tool for testing web applications for security vulnerabilities.
-- Hydra: A tool for performing brute force attacks on login credentials.
+- cydra: A tool for performing brute force attacks on login credentials.
 
 ### Hardware tools: This submenu contains tools for testing and exploiting hardware devices.     
 The items in this submenu are:
@@ -67,7 +64,7 @@ The items in this submenu are:
 
 # GTK4.0
 
-[Screencast from 2023-05-14 17-58-17.webm](https://github.com/Exploit0xfffff/PenetrationApp/assets/81065703/1d82d647-21e8-4978-a171-152777fcf13a)
+
 
 redirecting process is comming soon and development process developers can develop this program 
 
@@ -83,7 +80,7 @@ cd PenetrationApp/src/
 | src |  Frontend & Backend  |
 | assets | App assets folder |
 | assets/locales | App localizations |
-| target/release | ...coming soon v.1.0(alpha)...|
+| target/release | v.1.0(alpha)|
 
-### v1.0 alpha coming soon                                                                                      
+### v1.0 have some patches and development                                                                                  
 
