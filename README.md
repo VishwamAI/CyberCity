@@ -3,7 +3,6 @@ pentration testing in one base
 
 
 ### v1.0 alpha has completing some patches
-- set app icon 
 - creating deb package module & snap 
 - exe module for exe module we check and re-design those 
 ### v2.0 Beta has coming soon
