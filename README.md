@@ -80,9 +80,8 @@ cd PenetrationApp/src/
 
 | Folder | Description |
 | - | - |
-| src |  Frontend & Backend  |
-| assets | App assets folder |
-| assets/locales | App localizations |
+| src |  main  |
+| img | src/img|
 | target/release | v.1.0(alpha)|
 
 ### v1.0 have some patches and development                                                                                  
