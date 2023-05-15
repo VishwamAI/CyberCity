@@ -259,5 +259,5 @@ class MyApp(Gtk.Application):
 
        
 if __name__ == "__main__":
-    app = MyApp(application_id='org.example.GtkApplication')
+    app = MyApp(application_id='org.PenetrationApp.GtkApplication')
     app.run(sys.argv)
