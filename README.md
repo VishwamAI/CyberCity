@@ -61,7 +61,7 @@ The items in this submenu are:
 - Overall, our tool is a valuable resource for anyone interested in cybersecurity, and we are excited to share it with the world.
 
 
-### Gif of our front end part
+
 
 # GTK4.0
 
