@@ -72,7 +72,16 @@ The items in this submenu are:
 
 ```
 git clone https://github.com/Exploit0xfffff/PenetrationApp
-cd PenetrationApp/src/
+cd PenetrationApp
+chmod +x install.sh
+./install.sh
+```
+
+-if do you want uninstall the application 
+
+```
+chmod +x uninstall.sh
+./uninstall.sh
 ```
 
 # Development
