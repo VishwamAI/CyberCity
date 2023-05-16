@@ -19,7 +19,7 @@ CATEGORIES="Desktop"
 DESKTOP_FILE="[Desktop Entry]
 Type=Application
 Name=$APP_NAME
-Exec=python3 $MAIN_PY_PATH
+Exec=gnome-terminal --working-directory=$CURRENT_DIR -e 'python3 $MAIN_PY_PATH'
 Icon=$ICON_PATH
 Categories=$CATEGORIES
 Terminal=false"
