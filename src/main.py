@@ -172,7 +172,7 @@ class MainWindow(Gtk.ApplicationWindow):
 
         # Load CSS file
         css_provider = Gtk.CssProvider()
-        css_provider.load_from_path('style.css')
+        css_provider.load_from_path('src/style.css')
 
         # Apply CSS to window
         display = Gdk.Display.get_default()
