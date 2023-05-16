@@ -3,6 +3,15 @@ pentration testing in one base
 
 
 ### v1.0 alpha has completing some patches
+issues:
+- running background terminal and showing
+-  ![image](https://github.com/Exploit0xfffff/PenetrationApp/assets/81065703/e097228b-e0f1-40e8-b4aa-f2e48e322db2)
+
+- the icon was not showing here but showing here 
+![image](https://github.com/Exploit0xfffff/PenetrationApp/assets/81065703/fb5f7af2-957b-4745-a974-df9c7ec35e64)
+
+- these two issues are arised to me can any one fix this 
+
 - creating deb package module & snap 
 - exe module for exe module we check and re-design those 
 ### v2.0 Beta has coming soon
