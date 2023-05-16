@@ -5,7 +5,12 @@ pentration testing in one base
 ### v1.0 alpha has completing some patches
 issues:
 - 2 issues are arrised to me 
-- running background terminal and showing'
+- running background terminal and showing' 
+- in install.sh we have executed like 
+```
+Exec=gnome-terminal --working-directory=$CURRENT_DIR -e 'python3 $MAIN_PY_PATH'
+```
+
 ![image](https://github.com/Exploit0xfffff/PenetrationApp/assets/81065703/e097228b-e0f1-40e8-b4aa-f2e48e322db2)
 
 - the icon was not showing here but showing here 
