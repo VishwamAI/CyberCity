@@ -77,7 +77,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
--if do you want uninstall the application 
+- if do you want uninstall the application 
 
 ```
 chmod +x uninstall.sh
