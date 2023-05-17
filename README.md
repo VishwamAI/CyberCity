@@ -10,8 +10,14 @@ issues:
 ```
 Exec=gnome-terminal --working-directory=$CURRENT_DIR -e 'python3 $MAIN_PY_PATH'
 ```
-
 ![image](https://github.com/Exploit0xfffff/PenetrationApp/assets/81065703/e097228b-e0f1-40e8-b4aa-f2e48e322db2)
+
+- if i executetd this 
+
+```
+Exec=python3 $MAIN_PY_PATH
+```
+![image](https://github.com/Exploit0xfffff/PenetrationApp/assets/81065703/32b1a7bc-a191-479d-939d-a9bb95e646d8)
 
 - the icon was not showing here but showing here 
 
