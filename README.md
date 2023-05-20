@@ -86,9 +86,8 @@ The items in this submenu are:
 
 # GTK4.0
 
-[Screencast from 2023-05-14 21-30-42.webm](https://github.com/Exploit0xfffff/PenetrationApp/assets/81065703/f240e79e-c432-48e2-b045-6989c0b8e124)
 
-- the video length is more so thats why we shorted and given you sample 
+[Screencast from 2023-05-20 21-26-28.webm](https://github.com/Exploit0xfffff/PenetrationApp/assets/81065703/ab7de794-c23a-43f5-bc1e-8dcc84f4e3fc)
 
 - our two gols are re-directing and pre-installation for beginners we have completed the task1 the task2 we find the more components and develop our tool  
 
@@ -99,6 +98,7 @@ cd PenetrationApp
 chmod +x linuxinstall.sh
 ./linuxinstall.sh
 ```
+
 macos installation
 ```
 git clone https://github.com/Exploit0xfffff/PenetrationApp
