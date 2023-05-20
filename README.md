@@ -92,13 +92,20 @@ The items in this submenu are:
 
 - our two gols are re-directing and pre-installation for beginners we have completed the task1 the task2 we find the more components and develop our tool  
 
+linux installation 
 ```
 git clone https://github.com/Exploit0xfffff/PenetrationApp
 cd PenetrationApp
-chmod +x install.sh
-./install.sh
+chmod +x linuxinstall.sh
+./linuxinstall.sh
 ```
-
+macos installation
+```
+git clone https://github.com/Exploit0xfffff/PenetrationApp
+cd PenetrationApp
+chmod +x macosinstall.sh
+./macosinstall.sh
+```
 - if do you want uninstall the application 
 
 ```
