@@ -87,7 +87,7 @@ The items in this submenu are:
 # GTK4.0
 
 
-[Screencast from 2023-05-20 21-26-28.webm](https://github.com/Exploit0xfffff/PenetrationApp/assets/81065703/ab7de794-c23a-43f5-bc1e-8dcc84f4e3fc)
+
 
 - our two gols are re-directing and pre-installation for beginners we have completed the task1 the task2 we find the more components and develop our tool  
 
