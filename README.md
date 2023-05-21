@@ -96,5 +96,5 @@ chmod +x uninstall.sh
 | img | src/img|
 | target/release | v.1.0(alpha)|
 
-### v1.0 have some patches and development                                                                                  
+### v1.0 releasing .deb package & .exe package & we release soon the install packages                                                                                  
 
