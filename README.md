@@ -64,9 +64,6 @@ The items in this submenu are:
 
 # GTK4.0
 
-
-
-
 - our two gols are re-directing and pre-installation for beginners we have completed the task1 the task2 we find the more components and develop our tool  
 
 linux installation 
@@ -84,7 +81,7 @@ cd PenetrationApp
 chmod +x macosinstall.sh
 ./macosinstall.sh
 ```
-- if do you want uninstall the application 
+- if do you want uninstall the application in linux
 
 ```
 chmod +x uninstall.sh
