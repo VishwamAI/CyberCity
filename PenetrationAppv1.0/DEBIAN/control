@@ -1,6 +1,7 @@
 Package: penetration-app
 Version: 1.0
 Architecture: all
-Maintainer: swayampakulavsspavanakasinadhsarma  <exploit0xffff@gmail.com>
+Maintainer: swayampakulavsspavanakasinadhsarma <exploit0xffff@gmail.com>
 Depends: python3, python3-gi, gir1.2-gtk-4.0, gir1.2-adw-1
-Description: it is alpha version of application this first version
+Description: Alpha version of the Penetration App
+ This is the first version of the application, currently in its alpha stage. Please note that this version may contain bugs or incomplete features. Use it with caution.
