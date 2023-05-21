@@ -7,7 +7,6 @@ pentration testing in one base
 ### v2.0 Beta has coming soon
 - after that we have doing some applications development i.e Benmap,cydra,Hellosploit 
 - no changes for brupsuite 
-### Here is an explanation of each submenu and its items:
 
 # ⬇️ Download
 
@@ -25,6 +24,9 @@ pentration testing in one base
 ```
   sudo apt remove penetration-app 
 ```
+
+
+### Here is an explanation of each submenu and its items:
 
 ### Encryption and decryption: This submenu contains tools for encrypting and decrypting data. 
 The items in this submenu are:
