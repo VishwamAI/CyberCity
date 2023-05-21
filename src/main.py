@@ -166,10 +166,15 @@ class MainWindow(Gtk.ApplicationWindow):
         self.ctfwithgoogle_action.connect("activate", self.ctfwithgoogle)
         self.add_action(self.ctfwithgoogle_action)
         #End of CTF Platforms submenu
+        # Get the current directory of the script
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+
+        # Construct the absolute file path
+        css_file_path = os.path.join(current_dir, 'style.css')
 
         # Load CSS file
         css_provider = Gtk.CssProvider()
-        css_provider.load_from_path('src/style.css')
+        css_provider.load_from_path(css_file_path)
 
         # Apply CSS to window
         display = Gdk.Display.get_default()
