@@ -3,12 +3,28 @@ pentration testing in one base
 
 
 ### v1.0 alpha has completing some patches
-- creating deb package module & snap 
 - exe module for exe module we check and re-design those 
 ### v2.0 Beta has coming soon
 - after that we have doing some applications development i.e Benmap,cydra,Hellosploit 
 - no changes for brupsuite 
 ### Here is an explanation of each submenu and its items:
+
+# ⬇️ Download
+
+| Distribution | Format | Source |
+| - | - | - |
+| Ubuntu | deb | https://github.com/Exploit0xfffff/PenetrationApp/releases/download/v1.0.0/PenetrationAppv1.0.deb |
+
+### ubuntu installation
+```
+  sudo dpkg -i PenetrationAppv1.0.deb
+```
+
+### uninstallation 
+
+```
+  sudo apt remove penetration-app 
+```
 
 ### Encryption and decryption: This submenu contains tools for encrypting and decrypting data. 
 The items in this submenu are:
@@ -58,35 +74,6 @@ The items in this submenu are:
 - In the future, we plan to expand our tool by adding more submenus and tools to keep up with the rapidly changing landscape of cybersecurity. We are also planning to integrate a backend component that will allow users to save and share their results with others.
 
 - Overall, our tool is a valuable resource for anyone interested in cybersecurity, and we are excited to share it with the world.
-
-
-
-
-# GTK4.0
-
-- our two gols are re-directing and pre-installation for beginners we have completed the task1 the task2 we find the more components and develop our tool  
-
-linux installation 
-```
-git clone https://github.com/Exploit0xfffff/PenetrationApp
-cd PenetrationApp
-chmod +x linuxinstall.sh
-./linuxinstall.sh
-```
-
-macos installation
-```
-git clone https://github.com/Exploit0xfffff/PenetrationApp
-cd PenetrationApp
-chmod +x macosinstall.sh
-./macosinstall.sh
-```
-- if do you want uninstall the application in linux
-
-```
-chmod +x uninstall.sh
-./uninstall.sh
-```
 
 # Development
 
