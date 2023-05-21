@@ -1,0 +1,10 @@
+Package: penetration-app
+Version: 1.0
+Architecture: amd64
+Maintainer: kasinadhsarma <exploit0xffff@gmail.com>
+Installed-Size: 12
+Section: unknown
+Priority: optional
+Homepage: <insert the upstream URL, if relevant>
+Description: <insert up to 60 chars description>
+ <Insert long description, indented with spaces.>
