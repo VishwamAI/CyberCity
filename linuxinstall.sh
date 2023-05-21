@@ -53,3 +53,33 @@ update_desktop_databases() {
 
 # Call the function to update desktop databases
 update_desktop_databases
+
+# Build the Debian package
+DEB_PACKAGE_NAME="penetration-app"
+DEB_PACKAGE_VERSION="1.0"
+DEB_PACKAGE_DIR="penetration-app-$DEB_PACKAGE_VERSION"
+
+# Create the package directory
+mkdir -p "$DEB_PACKAGE_DIR/DEBIAN"
+mkdir -p "$DEB_PACKAGE_DIR/usr/share/applications"
+mkdir -p "$DEB_PACKAGE_DIR/usr/local/bin"
+
+# Copy the .desktop file to the package directory
+cp "$DESKTOP_FILE_PATH" "$DEB_PACKAGE_DIR/usr/share/applications/$APP_NAME.desktop"
+
+# Create the control file
+CONTROL_FILE="Package: $DEB_PACKAGE_NAME
+Version: $DEB_PACKAGE_VERSION
+Architecture: all
+Maintainer: Your Name <your_email@example.com>
+Description: Your package description"
+
+echo "$CONTROL_FILE" > "$DEB_PACKAGE_DIR/DEBIAN/control"
+
+# Set permissions for the binary files
+chmod 755 "$DEB_PACKAGE_DIR/usr/local/bin"
+
+# Build the .deb package
+dpkg-deb --build "$DEB_PACKAGE_DIR"
+
+echo "Debian package created: $DEB_PACKAGE_NAME.deb"

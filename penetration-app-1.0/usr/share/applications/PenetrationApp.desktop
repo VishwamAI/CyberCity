@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=PenetrationApp
+Exec=python3 /home/kasinadhsarma/PenetrationApp/src/main.py
+Icon=/home/kasinadhsarma/PenetrationApp/src/img/icon.png
+Categories=Desktop
+Terminal=false
