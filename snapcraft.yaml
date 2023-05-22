@@ -21,7 +21,7 @@ parts:
 
 apps:
   penetration-app:
-    command: main.py
+    command: src/main.py
     plugs:
       - unity7
 
