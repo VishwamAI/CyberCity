@@ -1,13 +1,6 @@
 ### Tittle: Pentration App
 pentration testing in one base
 
-
-### v1.0 alpha has completing some patches
-- exe module for exe module we check and re-design those 
-### v2.0 Beta has coming soon
-- after that we have doing some applications development i.e Benmap,cydra,Hellosploit 
-- no changes for brupsuite 
-
 # ⬇️ Download
 
 | Distribution | Format | Source |
@@ -85,5 +78,10 @@ The items in this submenu are:
 | img | src/img|
 | target/release | v.1.0(alpha)|
 
-### v1.0 deb package has been released                                                                               
+
+### v1.0 alpha 
+- exe module for exe module we check and re-design those 
+### v2.0 Beta has coming soon
+- after that we have doing some applications development i.e Benmap,cydra,Hellosploit 
+- no changes for brupsuite 
 
