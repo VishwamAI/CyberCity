@@ -82,6 +82,8 @@ The items in this submenu are:
 
 ### v1.0 alpha 
 - exe module for exe module we check and re-design those 
+### v1.5.0 ambada
+- some extra menu with application security 
 ### v2.0 Beta has coming soon
 - after that we have doing some applications development i.e Benmap,cydra,Hellosploit 
 - no changes for brupsuite 
