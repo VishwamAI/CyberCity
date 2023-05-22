@@ -7,7 +7,7 @@ pentration testing in one base
 | - | - | - |
 | Ubuntu | deb | https://github.com/Exploit0xfffff/PenetrationApp/releases/download/v1.0.0/PenetrationAppv1.0.deb |
 |Developer| clone | ```git clone https://github.com/Exploit0xfffff/PenetrationApp cd PenetrationApp```|
-
+|snap store | snap | - |
 ### ubuntu installation
 ```
   sudo dpkg -i PenetrationAppv1.0.deb
