@@ -1,4 +1,4 @@
-name: PenetrationApp
+name: penetration-app
 base: core18
 version: '1.0'
 summary: Penetration App
@@ -31,4 +31,3 @@ parts:
     source: src
     organize:
       '*.png': img/
-      'style.css': .
