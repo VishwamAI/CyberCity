@@ -1,4 +1,4 @@
-name: penetration-app
+name: PenetrationApp
 base: core18
 version: '1.0'
 summary: Penetration App
