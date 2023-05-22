@@ -24,10 +24,3 @@ apps:
     command: src/main.py
     plugs:
       - unity7
-
-parts:
-  app:
-    plugin: dump
-    source: src
-    organize:
-      '*.png': img/
