@@ -6,6 +6,11 @@ description: A GUI application for penetration testing.
 
 grade: stable
 confinement: strict
+confinement: classic
+apps:
+  penetration-app:
+    command: main.py
+    plugs: [network, home]
 
 parts:
   app:
@@ -17,4 +22,5 @@ parts:
       - gir1.2-gtk-4.0
       - gir1.2-adw-1
       - gir1.2-notify-0.7
-      - libgdk-pixbuf2.0-dev
+      - libgdk-pixbuf2.0-dev:
+          id: libgdk-pixbuf-dev
