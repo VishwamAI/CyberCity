@@ -1,26 +1,49 @@
 name: penetration-app
-base: core18
 version: '1.0'
-summary: Penetration App
-description: A GUI application for penetration testing.
+summary: A penetration testing tool with a GUI
+description: |
+  This application provides a graphical user interface (GUI) for a penetration testing tool.
 
 grade: stable
 confinement: strict
-confinement: classic
-apps:
-  penetration-app:
-    command: main.py
-    plugs: [network, home]
+
+base: core18
+adopt-info: penetration-app
 
 parts:
   app:
+    source: .
     plugin: python
     python-version: python3
-    source: src/main.py
     stage-packages:
-      - libgtk-4-dev
       - gir1.2-gtk-4.0
-      - gir1.2-adw-1
-      - gir1.2-notify-0.7
-      - libgdk-pixbuf2.0-dev:
-          id: libgdk-pixbuf-dev
+      - gir1.2-webkit2-4.0
+      - libgirepository1.0-dev
+      - libwebkit2gtk-4.0-dev
+
+apps:
+  penetration-app:
+    command: main.py
+    plugs:
+      - x11
+      - desktop
+      - wayland
+      - browser-support
+
+plugs:
+  x11:
+    interface: x11
+    allow-x11: true
+
+  desktop:
+    interface: desktop
+    desktop: [unity7, gnome-shell, cinnamon, pantheon, budgie-remix]
+
+  wayland:
+    interface: wayland
+    allow-apps: ['penetration-app']
+
+  browser-support:
+    interface: browser-support
+    allow-sandbox: true
+    allow-snap-apps: ['chromium', 'firefox']
