@@ -11,7 +11,7 @@ parts:
   app:
     plugin: python
     python-version: python3
-    source: .
+    source: src/main.py
     stage-packages:
       - libgtk-4-dev
       - gir1.2-gtk-4.0
