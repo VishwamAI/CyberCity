@@ -77,7 +77,7 @@ The items in this submenu are:
 | - | - |
 | src |  main  |
 | img | src/img|
-| target/release | v.1.0(alpha)|
+| target/release | v.1.5(ambada)|
 
 
 ### v1.0 alpha (completed) 
