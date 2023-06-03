@@ -83,7 +83,7 @@ The items in this submenu are:
 ### v1.0 alpha (completed) 
 
 ### v1.5.0 ambada (coming soon) 
-- some extra menu with application security
+- some extra menu 
  
 ### v2.0 Beta has coming soon
 - after that we have doing some applications development i.e Benmap,cydra,Hellosploit 
