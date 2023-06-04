@@ -4,17 +4,16 @@ summary: A penetration testing tool with a GUI
 description: |
   This application provides a graphical user interface (GUI) for a penetration testing tool.
 
-grade: stable
-confinement: strict
+grade: devel
+confinement: devmode
 
-base: core20
-adopt-info: penetration-app
+base: core18
 
 parts:
-  desktop-gtk3:
+  desktop-gtk4:
     plugin: nil
     build-packages:
-      - gir1.2-gtk-3.0
+      - gir1.2-gtk-4.0
       - gir1.2-gdkpixbuf-2.0
 
   app:
@@ -25,7 +24,7 @@ parts:
     source-subdir: .
     stage-packages:
       - python3-gi
-    after: [desktop-gtk3]
+    after: [desktop-gtk4]
 
 apps:
   penetration-app:
