@@ -108,4 +108,4 @@ Please note that the current version of Penetration App provides a limited set o
 
 We strive to provide a modern and user-friendly experience with regular updates based on user feedback and the ever-changing cybersecurity landscape. We are excited to have you as part of our community and look forward to delivering an exceptional cybersecurity toolkit.
 
-Visit our [GitHub repository](https://github.com/Exploit0xfffff/PenetrationApp) for the latest updates and version releases. Feel free to contribute, suggest new features, or report any issues you encounter. Let's work together to make the Penetration App the go-to tool for all your cybersecurity needs!
+Visit our [GitHub repository](https://github.com/Exploit0xfffff/PenetrationApp/discussions/15) for the latest updates and version releases. Feel free to contribute, suggest new features, or report any issues you encounter. Let's work together to make the Penetration App the go-to tool for all your cybersecurity needs!
