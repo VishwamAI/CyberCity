@@ -48,4 +48,6 @@ plugs:
   browser-support:
     interface: browser-support
     allow-sandbox: true
-    allow-snap-apps: ['chromium', 'firefox']
+    allow-snap-apps:
+      - chromium
+      - firefox
