@@ -7,7 +7,7 @@ description: |
 grade: devel
 confinement: devmode
 
-base: core18
+base: core22
 
 parts:
   desktop-gtk4:
