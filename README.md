@@ -1,93 +1,111 @@
-### Tittle: Pentration App
-pentration testing in one base
+## Title: Penetration App -  All-in-One Cybersecurity Toolkit
 
-# ⬇️ Download
+⬇️ **Download**
 
 | Distribution | Format | Source |
-| - | - | - |
-| Ubuntu | deb | https://github.com/Exploit0xfffff/PenetrationApp/releases/download/v1.0.0/PenetrationAppv1.0.deb |
-|all linux versions| snap | - |
-|Developer| clone | ``` git clone https://github.com/Exploit0xfffff/PenetrationApp ```|
-### ubuntu installation
-```
-  sudo dpkg -i PenetrationAppv1.0.deb
-```
+| ------------ | ------ | ------ |
+| Ubuntu       | deb    | [Download PenetrationAppv1.0.deb](https://github.com/Exploit0xfffff/PenetrationApp/releases/download/v1.0.0/PenetrationAppv1.0.deb) |
+| All Linux Versions | snap | - |
+| Developer    | clone  | `git clone https://github.com/Exploit0xfffff/PenetrationApp` |
 
-### uninstallation 
+### Ubuntu Installation
 
-```
-  sudo apt remove penetration-app 
+```bash
+sudo dpkg -i PenetrationAppv1.0.deb
 ```
 
+### Uninstallation
 
-### Here is an explanation of each submenu and its items:
+```bash
+sudo apt remove penetration-app
+```
 
-### Encryption and decryption: This submenu contains tools for encrypting and decrypting data. 
-The items in this submenu are:
+## Description
 
-- CyberChef: A web-based tool for encoding, decoding, and analyzing data.
-- Rot13: A simple form of encryption that rotates the letters in a message by 13 places.
-- Decode: A tool for decoding different types of encoded data.
-- Encode-Decode: A tool for both encoding and decoding data.
-### Web tools: This submenu contains tools for analyzing and testing websites. 
-The items in this submenu are:
-- Urlscan.io: A tool for analyzing and scanning websites for potential threats.
-- VulnHub: A platform for practicing penetration testing on vulnerable virtual machines.
-- Opswat: A tool for analyzing and scanning files for malware.
-- exploitdb: A tool for  Exploitation from CVE code 
-### Software tools: This submenu contains tools for testing and exploiting software. 
-The items in this submenu are:
+Penetration App is a comprehensive cybersecurity toolkit that offers a wide range of tools and resources for performing penetration testing and enhancing your cybersecurity skills. It is designed to be a one-stop-shop for all your cybersecurity needs, providing a collection of tools, platforms, and resources in a user-friendly interface.
 
-- BenNmap: A tool for network exploration and security auditing.
-- Hellosploit: A platform for developing, testing, and using exploit code against vulnerable targets.
-- BurpSuite: A tool for testing web applications for security vulnerabilities.
-- cydra: A tool for performing brute force attacks on login credentials.
+### Main Submenus and Tools
 
-### Hardware tools: This submenu contains tools for testing and exploiting hardware devices.     
-The items in this submenu are:
+#### Encryption and Decryption
 
-- Hak5: A company that produces tools and devices for penetration testing and wireless security.
-- Pine64: A company that produces single-board computers and other hardware devices for developers and enthusiasts.
+This submenu includes tools for encrypting and decrypting data, ensuring secure communication and data protection.
 
-### Training platforms: This submenu contains platforms for practicing and learning cybersecurity skills. 
-The items in this submenu are:
+- **CyberChef**: A powerful web-based tool for encoding, decoding, and analyzing data.
+- **Rot13**: An encryption method that rotates the letters in a message by 13 places.
+- **Decode**: A tool for decoding various types of encoded data.
+- **Encode-Decode**: A versatile tool for both encoding and decoding data.
 
-- TryHackMe: A platform for learning cybersecurity skills through interactive challenges.
-- HackTheBox: A platform for practicing penetration testing on vulnerable virtual machines.
+#### Web Tools
 
-### CTF platforms: This submenu contains platforms for participating in cybersecurity capture the flag (CTF)     competitions. 
-The items in this submenu are:
+This submenu offers tools for analyzing and testing websites, identifying potential vulnerabilities, and scanning for threats.
 
-- PicoCTF: A CTF platform designed for beginners.
-- CTFWithGoogle: A platform for participating in CTF competitions hosted by Google.
+- **Urlscan.io**: A comprehensive website analysis and scanning tool for potential threats.
+- **VulnHub**: A platform that provides vulnerable virtual machines for practicing penetration testing.
+- **Opswat**: A tool for analyzing and scanning files for malware.
+- **exploitdb**: A tool for exploiting vulnerabilities using CVE codes.
 
-### explanation on limited tools right now
+#### Software Tools
 
-- Our tool is designed to be a one-stop-shop for all things related to cybersecurity. It includes a variety of submenus, such as encryption and decryption, webtools, software tools, hardware tools, training platforms, and CTF platforms. These submenus contain some of the most popular and useful tools in each category, such as CyberChef for encryption and decryption, Nmap for software tools, Hak5 for hardware tools, and TryHackMe for training platforms.
+This submenu provides tools for testing and exploiting software, helping to uncover vulnerabilities and strengthen application security.
 
-- Our tool is user-friendly and easy to navigate, making it accessible to anyone, regardless of their level of expertise in cybersecurity. Whether you are just starting out in the field or are a seasoned cybersecurity professional, our tool has something for everyone. We have carefully selected the tools in each submenu to provide a balanced mix of functionality and usability, while also being mindful of our audience's limited time and resources.
+- **BenNmap**: A versatile tool for network exploration and security auditing.
+- **Hellosploit**: A platform for developing, testing, and using exploit code against vulnerable targets.
+- **BurpSuite**: A tool for testing web applications for security vulnerabilities.
+- **cydra**: A tool for performing brute force attacks on login credentials.
 
-- In the future, we plan to expand our tool by adding more submenus and tools to keep up with the rapidly changing landscape of cybersecurity. We are also planning to integrate a backend component that will allow users to save and share their results with others.
+#### Hardware Tools
 
-- Overall, our tool is a valuable resource for anyone interested in cybersecurity, and we are excited to share it with the world.
+This submenu focuses on tools for testing and exploiting hardware devices, with a particular emphasis on penetration testing and wireless security.
 
-# ⚒️ Development
+- **Hak5**: A leading company that produces tools and devices for penetration testing and wireless security.
+- **Pine64**: A company that specializes in developing single-board computers and other hardware devices for developers and enthusiasts.
 
-| Folder | Description |
-| - | - |
-| src |  main  |
-| img | src/img|
-| target/release | v.1.5(ambada)|
+#### Training Platforms
 
+This submenu provides platforms for practicing and learning cybersecurity skills through interactive challenges and virtual environments.
 
-### v1.0 alpha (completed) 
+- **TryHackMe**: A popular platform for learning and enhancing cybersecurity skills through interactive challenges and guided learning paths.
+- **HackTheBox**: An online platform that offers vulnerable virtual machines for practicing penetration testing and improving cybersecurity skills.
 
-### v1.5.0 ambada (coming soon) 
-- some extra menu 
- 
-### v2.0 Beta has coming soon
-- after that we have doing some applications development i.e Benmap,cydra,Hellosploit 
-- no changes for brupsuite 
+#### CTF Platforms
 
-### v2.5.0 beetroot
-- doing changes of ui & development 
+This submenu features platforms for participating in cybersecurity Capture The Flag (CTF) competitions, where you can test your skills in a simulated environment.
+
+- **PicoCTF**: A beginner-friendly CTF platform designed to help newcomers learn and develop cybersecurity skills.
+- **CTFWithGoogle**: A platform that hosts CTF competitions organized by Google, providing a challenging environment for experienced cybersecurity professionals.
+
+### Limited Tools
+
+Please note that the current version of Penetration App provides a limited set of tools. We have carefully selected popular and widely
+
+ used tools across different cybersecurity domains to ensure a balanced mix of functionality and usability. However, we are continuously working on expanding the toolset to keep up with the evolving cybersecurity landscape and provide you with the latest and most effective tools.
+
+### Future Updates
+
+- **Version 1.5.0 Ambada (Coming Soon)**: We are adding extra menus with new tools to further enhance your cybersecurity capabilities.
+
+- **Version 2.0 Beta (Coming Soon)**: We are planning significant updates that include the development of applications like Benmap, cydra, and Hellosploit. Additionally, BurpSuite will remain an essential tool within the toolkit.
+
+- **Version 2.5.0 Beetroot**: This update will bring significant UI improvements and further advancements in development.
+
+## Development
+
+| Folder            | Description |
+| ----------------- | ----------- |
+| src               | Contains the main source code |
+| img               | Contains images used in the project |
+| target/release    | Executable file for v1.5 (Ambada) release |
+
+### Release History
+
+- **v1.0 Alpha (Completed)**: Initial release with basic functionality and toolset.
+
+- **v1.5.0 Ambada (Coming Soon)**: Additional menus and tools to expand the capabilities of the toolkit.
+
+- **v2.0 Beta (Coming Soon)**: Focus on the development of new applications while maintaining existing tools like BurpSuite.
+
+- **v2.5.0 Beetroot**: Major UI improvements and further advancements in development.
+
+We strive to provide a modern and user-friendly experience with regular updates based on user feedback and the ever-changing cybersecurity landscape. We are excited to have you as part of our community and look forward to delivering an exceptional cybersecurity toolkit.
+
+Visit our [GitHub repository](https://github.com/Exploit0xfffff/PenetrationApp) for the latest updates and version releases. Feel free to contribute, suggest new features, or report any issues you encounter. Let's work together to make the Penetration App the go-to tool for all your cybersecurity needs!
