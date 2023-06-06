@@ -5,7 +5,9 @@
 | Distribution | Format | Source |
 | ------------ | ------ | ------ |
 | Ubuntu       | deb    | [Download PenetrationAppv1.0.deb](https://github.com/Exploit0xfffff/PenetrationApp/releases/download/v1.0.0/PenetrationAppv1.0.deb) |
-| All Linux Versions | snap | - |
+| Windows      | exe    | coming soon |
+| All Linux Versions | snap | coming soon |
+| macos | app | coming soon|
 | Developer    | clone  | `git clone https://github.com/Exploit0xfffff/PenetrationApp` |
 
 ### Ubuntu Installation
