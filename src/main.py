@@ -43,22 +43,79 @@ class MainWindow(Gtk.ApplicationWindow):
         
         #software submenu
         software_menu = Gio.Menu.new()
-        menu.append_submenu("Software", software_menu)
-        
-        #Create the submenu actions for Software
-        benmap_action = Gio.MenuItem.new("Benmap", "win.benmap")
-        Hellosploit_action = Gio.MenuItem.new("Hellosploit", "win.Hellosploit")
-        cydra_action = Gio.MenuItem.new("Cydra", "win.cydra")
-        Brupsuite_action = Gio.MenuItem.new("Brupsuite", "win.Brupsuite")
-        software_menu.append_item(benmap_action)
-        software_menu.append_item(Hellosploit_action)
-        software_menu.append_item(cydra_action)
-        software_menu.append_item(Brupsuite_action)
-        #End of software submenu
-        
+        menu.append_submenu("Software Tools", software_menu)
+        #software submenus some 
+        informationgathering_submenu = Gio.Menu.new()
+        vulnerabilityanalysis_submenu = Gio.Menu.new()
+        webapplictionanalysis_submenu = Gio.Menu.new()
+        passwordattacks_submenu = Gio.Menu.new()
+        wirelessattacks_submenu = Gio.Menu.new()
+        databaseassessment_submenu = Gio.Menu.new()
+        reverseengineering_submenu = Gio.Menu.new()
+
+        software_menu.append_submenu("Information Gathering", informationgathering_submenu)
+        software_menu.append_submenu("Vulnerability Analysis", vulnerabilityanalysis_submenu)
+        software_menu.append_submenu("Web Application Analysis", webapplictionanalysis_submenu)
+        software_menu.append_submenu("Password Attacks", passwordattacks_submenu)
+        software_menu.append_submenu("Wireless Attacks", wirelessattacks_submenu)
+        software_menu.append_submenu("Data Base Assessment", databaseassessment_submenu)
+        software_menu.append_submenu("Reverse Engineering", reverseengineering_submenu)
+
+        # software sub InformationGathering submenus
+        amass_action = Gio.MenuItem.new("Amass", "win.Amass")
+        dmitry_action = Gio.MenuItem.new("Dmitry", "win.dmitry")
+        ikescan_action = Gio.MenuItem.new("Ike-Scan", "win.ikescan")
+        legionroot_action = Gio.MenuItem.new("legion(root)", "win.legionroot")
+        informationgathering_submenu.append_item(amass_action)
+        informationgathering_submenu.append_item(dmitry_action)
+        informationgathering_submenu.append_item(ikescan_action)
+        informationgathering_submenu.append_item(legionroot_action)
+
+        # Vulnerability Analysis submenu
+        nmap_action = Gio.MenuItem.new("Nmap", "win.nmap")
+        nikto_action = Gio.MenuItem.new("Nikto", "win.nikto")
+        nexpose_action = Gio.MenuItem.new("Nexpose", "win.nexpose") 
+        vulnerabilityanalysis_submenu.append_item(nmap_action)
+        vulnerabilityanalysis_submenu.append_item(nikto_action)
+        vulnerabilityanalysis_submenu.append_item(nexpose_action)
+
+        # Web Application Analysis submenu
+        burpsuite_action = Gio.MenuItem.new("Burp Suite", "win.burpsuite")
+        wafw00f_action = Gio.MenuItem.new("wafw00f", "win.wafw00f")
+        webapplictionanalysis_submenu.append_item(burpsuite_action)
+        webapplictionanalysis_submenu.append_item(wafw00f_action)
+
+        # Password Attacks submenu
+        hydra_action = Gio.MenuItem.new("Hydra", "win.hydra")
+        johntheripper_action = Gio.MenuItem.new("John the Ripper", "win.johntheripper")
+        hashcat_action = Gio.MenuItem.new("Hashcat", "win.hashcat")
+        passwordattacks_submenu.append_item(hydra_action)
+        passwordattacks_submenu.append_item(johntheripper_action)
+        passwordattacks_submenu.append_item(hashcat_action)
+
+        # Wireless Attacks submenu
+        aircrackng_action = Gio.MenuItem.new("Aircrack-ng", "win.aircracking")
+        airmon_ng_action = Gio.MenuItem.new("Airmon-ng", "win.airmon")
+        wifite_action = Gio.MenuItem.new("Wifite", "win.wifite")
+        wirelessattacks_submenu.append_item(aircrackng_action)
+        wirelessattacks_submenu.append_item(airmon_ng_action)
+        wirelessattacks_submenu.append_item(wifite_action)
+
+        # Data Base Assessment submenu
+        sqlmap_action = Gio.MenuItem.new("sqlmap", "win.sqlmap")
+        jsqlinjection_action = Gio.MenuItem.new("jsql Injection", "win.jsqlinjection")
+        databaseassessment_submenu.append_item(sqlmap_action)
+        databaseassessment_submenu.append_item(jsqlinjection_action)
+
+        # Reverse Engineering submenu
+        radare2_action = Gio.MenuItem.new("radare2", "win.radare2")
+        binwalk_action = Gio.MenuItem.new("binwalk", "win.binwalk")
+        reverseengineering_submenu.append_item(radare2_action)
+        reverseengineering_submenu.append_item(binwalk_action)
+
         #create the submenu actions for Hardware
         hardware_menu = Gio.Menu.new()
-        menu.append_submenu("Hardware", hardware_menu)
+        menu.append_submenu("Hardware Tools", hardware_menu)
         
         #Create the submenu actions for Hardware
         Hak5_action = Gio.MenuItem.new("Hak5", "win.Hak5")
@@ -215,23 +272,9 @@ class MainWindow(Gtk.ApplicationWindow):
     def exploitdb(self, action, param):
         webbrowser.open_new_tab("https://www.exploit-db.com/")
     # End of web tools submenu action
-    # Define the functions for software submenu action
-    def benmap(self, action, param):
-        notification = Notify.Notification.new("Benmap", "Benmap has coming soon.")
-        notification.show()
-
-    def Hellosploit(self, action, param):
-        notification = Notify.Notification.new("Hellosploit", "Hellosploit coming soon.")
-        notification.show()
-
-    def cydra(self, action, param):
-        notification = Notify.Notification.new("Cydra", "Cydra has coming soon.")
-        notification.show()
-
-    def Brupsuite(self, action, param):
-        notification = Notify.Notification.new("Brupsuite", "Brupsuite has coming soon.")
-        notification.show()
-    # End of software submenu action
+    
+    # Define the functions for software sub-submenu action
+    
     # Define the functions for hardware submenu action
     def Hak5(self, action, param):
         webbrowser.open_new_tab("https://hak5.org/")
