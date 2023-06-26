@@ -180,23 +180,6 @@ class MainWindow(Gtk.ApplicationWindow):
         self.add_action(self.exploitdb_action)
         #End of Web tools submenu
         #Create the SimpleAction objects and connect them to the functions
-        self.benmap_action = Gio.SimpleAction.new("benmap", None)
-        self.benmap_action.connect("activate", self.benmap)
-        self.add_action(self.benmap_action)
-        
-        self.Hellosploit_action = Gio.SimpleAction.new("Hellosploit", None)
-        self.Hellosploit_action.connect("activate", self.Hellosploit)
-        self.add_action(self.Hellosploit_action)
-        
-        self.cydra_action = Gio.SimpleAction.new("cydra", None)
-        self.cydra_action.connect("activate", self.cydra)
-        self.add_action(self.cydra_action)
-        
-        self.Brupsuite_action = Gio.SimpleAction.new("Brupsuite", None)
-        self.Brupsuite_action.connect("activate", self.Brupsuite)
-        self.add_action(self.Brupsuite_action)
-        #End of software submenu
-        #Create the SimpleAction objects and connect them to the functions
         self.Hak5_action = Gio.SimpleAction.new("Hak5", None)
         self.Hak5_action.connect("activate", self.Hak5)
         self.add_action(self.Hak5_action)
