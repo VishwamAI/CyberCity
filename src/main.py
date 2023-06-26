@@ -179,6 +179,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.exploitdb_action.connect("activate", self.exploitdb)
         self.add_action(self.exploitdb_action)
         #End of Web tools submenu
+<<<<<<< HEAD
         
         #Create the inforamtion gathering functions
         self.amass_action = Gio.SimpleAction.new("Amass",None)
@@ -223,6 +224,8 @@ class MainWindow(Gtk.ApplicationWindow):
         self.add_action(self.wafw00f_action)
         #End of the webapplication analysis functions
         
+=======
+>>>>>>> origin/main
         #Create the SimpleAction objects and connect them to the functions
         self.Hak5_action = Gio.SimpleAction.new("Hak5", None)
         self.Hak5_action.connect("activate", self.Hak5)
