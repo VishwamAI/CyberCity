@@ -179,6 +179,53 @@ class MainWindow(Gtk.ApplicationWindow):
         self.exploitdb_action.connect("activate", self.exploitdb)
         self.add_action(self.exploitdb_action)
         #End of Web tools submenu
+<<<<<<< HEAD
+        
+        #Create the inforamtion gathering functions
+        self.amass_action = Gio.SimpleAction.new("Amass",None)
+        self.amass_action.connect("activate",self.amass)
+        self.add_action(self.amass_action)
+       
+        self.dmitry_action =Gio.SimpleAction.new("dmitry",None)
+        self.dmitry_action.connect("activate",self.dmitry)
+        self.add_action(self.dmitry_action)
+
+        self.ikescan_action =Gio.SimpleAction.new("ikescan",None)
+        self.ikescan_action.connect("activate",self.ikescan)
+        self.add_action(self.ikescan_action)
+        
+        self.legionroot_action =Gio.SimpleAction.new("legionroot",None)
+        self.legionroot_action.connect("activate",self.legionroot)
+        self.add_action(self.legionroot_action)
+        #End of the Information gathering funtions 
+        
+        #Create the vulnerablity analysis functions
+        self.nmap_action =Gio.SimpleAction.new("nmap",None)
+        self.nmap_action.connect("activate", self.nmap)
+        self.add_action(self.nmap_action)
+        
+        self.nikto_action =Gio.SimpleAction.new("nikto",None)
+        self.nikto_action.connect("activate", self.nikto)
+        self.add_action(self.nikto_action)
+        
+        self.nexpose_action =Gio.SimpleAction.new("nexpose",None)
+        self.nexpose_action.connect("activate", self.nexpose)
+        self.add_action(self.nexpose_action)
+        
+        #End of the vulnerablity analysis functions
+        
+        #create the functions of webapplication analysis
+        self.burpsuite_action =Gio.SimpleAction.new("burpsuite",None)
+        self.burpsuite_action.connect("activate", self.burpsuite)
+        self.add_action(self.burpsuite_action)
+        
+        self.wafw00f_action =Gio.SimpleAction.new("wafw00f",None)
+        self.wafw00f_action.connect("activate", self.wafw00f)
+        self.add_action(self.wafw00f_action)
+        #End of the webapplication analysis functions
+        
+=======
+>>>>>>> origin/main
         #Create the SimpleAction objects and connect them to the functions
         self.Hak5_action = Gio.SimpleAction.new("Hak5", None)
         self.Hak5_action.connect("activate", self.Hak5)
@@ -256,8 +303,37 @@ class MainWindow(Gtk.ApplicationWindow):
         webbrowser.open_new_tab("https://www.exploit-db.com/")
     # End of web tools submenu action
     
-    # Define the functions for software sub-submenu action
+    # Define the functions for software inforamation gathering sub-submenu action
+    def amass(self,action,param):
+        print('amass')
     
+    def dmitry(self,action,param):
+        print('dmitry')
+    
+    def ikescan(self,action,parm):
+        print('ikescan')
+    
+    def legionroot(self,action,parm):
+        print('legion(root)')
+        
+    # Define the functions for software inforamation gathering sub-submenu action
+    # Create the vulnerability analysis functions
+    def nmap(self, action, parameter):
+        print('nmap')
+
+    def nikto(self, action, parameter):
+        print('nikto')
+
+    def nexpose(self, action, parameter):
+        print('nexpose')
+    
+    # End of the vulnerablity analysis functions
+    def burpsuite(self,param,parameter):
+        print('brupsutie')
+
+    def wafw00f(self,param,Parameter):
+        print('wafw00f')
+        
     # Define the functions for hardware submenu action
     def Hak5(self, action, param):
         webbrowser.open_new_tab("https://hak5.org/")
