@@ -222,7 +222,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.wafw00f_action.connect("activate", self.wafw00f)
         self.add_action(self.wafw00f_action)
         #End of the webapplication analysis functions
-        
+       
         #Create the SimpleAction objects and connect them to the functions
         self.Hak5_action = Gio.SimpleAction.new("Hak5", None)
         self.Hak5_action.connect("activate", self.Hak5)
