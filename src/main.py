@@ -7,6 +7,7 @@ gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 gi.require_version('Notify', '0.7')
 from gi.repository import Gtk,Gio, Gdk, Notify
+import subprocess
 class MainWindow(Gtk.ApplicationWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -48,51 +49,149 @@ class MainWindow(Gtk.ApplicationWindow):
         informationgathering_submenu = Gio.Menu.new()
         vulnerabilityanalysis_submenu = Gio.Menu.new()
         webapplictionanalysis_submenu = Gio.Menu.new()
+        databaseassessment_submenu = Gio.Menu.new()
         passwordattacks_submenu = Gio.Menu.new()
         wirelessattacks_submenu = Gio.Menu.new()
-        databaseassessment_submenu = Gio.Menu.new()
         reverseengineering_submenu = Gio.Menu.new()
+        exploitationtools_submenu = Gio.Menu.new()
+        sniffingtools_submenu = Gio.Menu.new()
+        postexploitation_submenu = Gio.Menu.new()
+        forensics_submenu = Gio.Menu.new()
+        reportingtools_submenu = Gio.Menu.new()
+        socialengneeringtoolkit_submenu = Gio.Menu.new()
+        systemservicestoolkit_submenu = Gio.Menu.new()
+        
 
         software_menu.append_submenu("Information Gathering", informationgathering_submenu)
         software_menu.append_submenu("Vulnerability Analysis", vulnerabilityanalysis_submenu)
         software_menu.append_submenu("Web Application Analysis", webapplictionanalysis_submenu)
+        software_menu.append_submenu("Data Base Assessment", databaseassessment_submenu)
         software_menu.append_submenu("Password Attacks", passwordattacks_submenu)
         software_menu.append_submenu("Wireless Attacks", wirelessattacks_submenu)
-        software_menu.append_submenu("Data Base Assessment", databaseassessment_submenu)
         software_menu.append_submenu("Reverse Engineering", reverseengineering_submenu)
-
+        software_menu.append_submenu("Exploitation Tools", exploitationtools_submenu)
+        software_menu.append_submenu("Sniffing Tools",sniffingtools_submenu)
+        software_menu.append_submenu("Post Exploitation",postexploitation_submenu)
+        software_menu.append_submenu("Forensics",forensics_submenu)
+        software_menu.append_submenu("Reporting Tools",reportingtools_submenu)
+        software_menu.append_submenu("Social Engeneering Toolkit",socialengneeringtoolkit_submenu)
+        software_menu.append_submenu("System Services Toolkit",systemservicestoolkit_submenu)
+        
         # software sub InformationGathering submenus
+        
+        # Information Gathering submenu
         amass_action = Gio.MenuItem.new("Amass", "win.Amass")
-        dmitry_action = Gio.MenuItem.new("Dmitry", "win.dmitry")
-        ikescan_action = Gio.MenuItem.new("Ike-Scan", "win.ikescan")
-        legionroot_action = Gio.MenuItem.new("legion(root)", "win.legionroot")
+        dmitry_action = Gio.MenuItem.new("Dmitry", "win.Dmitry")
+        ikescan_action = Gio.MenuItem.new("Ike-Scan", "win.Ikescan")
+        legionroot_action = Gio.MenuItem.new("legion(root)", "win.Legionroot")
+        matelgo_action = Gio.MenuItem.new("Matelgo", "win.Matelgo")
+        netdiscover_action = Gio.MenuItem.new("Netdiscover", "win.Netdiscover")
+        nmap_action = Gio.MenuItem.new("Nmap", "win.Nmap")
+        reconng_action = Gio.MenuItem.new("Recon-ng", "win.Reconng")
+        spiderfoot_action = Gio.MenuItem.new("Spider Foot", "win.Spiderfoot")
+
         informationgathering_submenu.append_item(amass_action)
         informationgathering_submenu.append_item(dmitry_action)
         informationgathering_submenu.append_item(ikescan_action)
         informationgathering_submenu.append_item(legionroot_action)
+        informationgathering_submenu.append_item(matelgo_action)
+        informationgathering_submenu.append_item(netdiscover_action)
+        informationgathering_submenu.append_item(nmap_action)
+        informationgathering_submenu.append_item(reconng_action)
+        informationgathering_submenu.append_item(spiderfoot_action)
 
         # Vulnerability Analysis submenu
-        nmap_action = Gio.MenuItem.new("Nmap", "win.nmap")
-        nikto_action = Gio.MenuItem.new("Nikto", "win.nikto")
-        nexpose_action = Gio.MenuItem.new("Nexpose", "win.nexpose") 
+        gvmintalsetup_action = Gio.MenuItem.new("GVM Intal Setup", "win.Gvmintalsetup")
+        gvmstart_action = Gio.MenuItem.new("GVM Start", "win.Gvmstart")
+        legionroot_action = Gio.MenuItem.new("legion(root)", "win.Legionroot")
+        lynis_action = Gio.MenuItem.new("Lynis", "win.Lynis")
+        nikito_action = Gio.MenuItem.new("Nikito", "win.Nikito")
+        nmap_action = Gio.MenuItem.new("Nmap", "win.Nmap")
+        peass_action = Gio.MenuItem.new("Peass", "win.Peass")
+        unixprvesccheck_action = Gio.MenuItem.new("unix-privesc-check", "win.Unixprvesccheck")
+
+        vulnerabilityanalysis_submenu.append_item(gvmintalsetup_action)
+        vulnerabilityanalysis_submenu.append_item(gvmstart_action)
+        vulnerabilityanalysis_submenu.append_item(legionroot_action)
+        vulnerabilityanalysis_submenu.append_item(lynis_action)
+        vulnerabilityanalysis_submenu.append_item(nikito_action)
         vulnerabilityanalysis_submenu.append_item(nmap_action)
-        vulnerabilityanalysis_submenu.append_item(nikto_action)
-        vulnerabilityanalysis_submenu.append_item(nexpose_action)
+        vulnerabilityanalysis_submenu.append_item(peass_action)
+        vulnerabilityanalysis_submenu.append_item(unixprvesccheck_action)
 
         # Web Application Analysis submenu
         burpsuite_action = Gio.MenuItem.new("Burp Suite", "win.burpsuite")
-        wafw00f_action = Gio.MenuItem.new("wafw00f", "win.wafw00f")
+        commix_action = Gio.MenuItem.new("Commix", "win.commix")
+        httrack_action = Gio.MenuItem.new("HT-Track", "win.httrack")
+        pros_action = Gio.MenuItem.new("Prox", "win.prox")
+        skipfish_action = Gio.MenuItem.new("Skipfish", "win.skipfish")
+        sqlmap_action = Gio.MenuItem.new("SQLmap", "win.sqlmap")
+        webscrab_action = Gio.MenuItem.new("Web Scrab", "win.webscrab")
+        webshells_action = Gio.MenuItem.new("Web Shells", "win.webshells")
+        wpscan_action = Gio.MenuItem.new("WPScan", "win.wpscan")
+        zap_action = Gio.MenuItem.new("ZAP", "win.zap")
+        
         webapplictionanalysis_submenu.append_item(burpsuite_action)
-        webapplictionanalysis_submenu.append_item(wafw00f_action)
-
+        webapplictionanalysis_submenu.append_item(commix_action)
+        webapplictionanalysis_submenu.append_item(httrack_action)
+        webapplictionanalysis_submenu.append_item(pros_action)
+        webapplictionanalysis_submenu.append_item(skipfish_action)
+        webapplictionanalysis_submenu.append_item(sqlmap_action)
+        webapplictionanalysis_submenu.append_item(webscrab_action)
+        webapplictionanalysis_submenu.append_item(webshells_action)
+        webapplictionanalysis_submenu.append_item(wpscan_action)
+        webapplictionanalysis_submenu.append_item(zap_action)
+        
+        #Database Attacks submenu
+        jsqlinjection_action = Gio.MenuItem.new("JSQL Injection", "win.jsqlinjection")
+        mdbsql_action = Gio.MenuItem.new("MDB-SQL", "win.mdb-sql")
+        oscanner_action = Gio.MenuItem.new("Oscanner", "win.oscanner")
+        sidegueuser_action = Gio.MenuItem.new("Sidegueuser", "win.sidegueuser")
+        sqldict_action = Gio.MenuItem.new("SQLdict", "win.sqldict")
+        sqllitedbbrowser_action = Gio.MenuItem.new("SQLlite DB Browser", "win.sqllitedbbrowser")
+        sqlmap_action = Gio.MenuItem.new("SQLmap", "win.sqlmap")
+        sqlninja_action = Gio.MenuItem.new("SQLninja", "win.sqlninja")
+        sqlsus_action = Gio.MenuItem.new("SQLsus", "win.sqlsus")
+        transcmdlog_action = Gio.MenuItem.new("Transcmdlog", "win.transcmdlog")
+        
+        databaseassessment_submenu.append_item(jsqlinjection_action)
+        databaseassessment_submenu.append_item(mdbsql_action)
+        databaseassessment_submenu.append_item(oscanner_action)
+        databaseassessment_submenu.append_item(sidegueuser_action)
+        databaseassessment_submenu.append_item(sqldict_action)
+        databaseassessment_submenu.append_item(sqllitedbbrowser_action)
+        databaseassessment_submenu.append_item(sqlmap_action)
+        databaseassessment_submenu.append_item(sqlninja_action)
+        databaseassessment_submenu.append_item(sqlsus_action)
+        databaseassessment_submenu.append_item(transcmdlog_action)
+        
         # Password Attacks submenu
-        hydra_action = Gio.MenuItem.new("Hydra", "win.hydra")
-        johntheripper_action = Gio.MenuItem.new("John the Ripper", "win.johntheripper")
+        cewl_action = Gio.MenuItem.new("Cewl", "win.cewl")
+        crunch_action = Gio.MenuItem.new("Crunch", "win.crunch")
         hashcat_action = Gio.MenuItem.new("Hashcat", "win.hashcat")
-        passwordattacks_submenu.append_item(hydra_action)
-        passwordattacks_submenu.append_item(johntheripper_action)
+        hydra_action = Gio.MenuItem.new("Hydra", "win.hydra")
+        john_action = Gio.MenuItem.new("John", "win.john")
+        johnny_action = Gio.MenuItem.new("Johnny", "win.johnny")
+        medusa_action = Gio.MenuItem.new("Medusa", "win.medusa")
+        nrcrack_action = Gio.MenuItem.new("Ncrack", "win.ncrack")
+        ophcrack_action = Gio.MenuItem.new("Ophcrack", "win.ophcrack")
+        ranbowcrack_action = Gio.MenuItem.new("Rainbow Crack", "win.rainbowcrack")
+        rcrackimt_action = Gio.MenuItem.new("Rcracki Mt", "win.rcrackimt")
+        wordlists_action = Gio.MenuItem.new("Wordlists", "win.wordlists")
+        
+        passwordattacks_submenu.append_item(cewl_action)
+        passwordattacks_submenu.append_item(crunch_action)
         passwordattacks_submenu.append_item(hashcat_action)
-
+        passwordattacks_submenu.append_item(hydra_action)
+        passwordattacks_submenu.append_item(john_action)
+        passwordattacks_submenu.append_item(johnny_action)
+        passwordattacks_submenu.append_item(medusa_action)
+        passwordattacks_submenu.append_item(nrcrack_action)
+        passwordattacks_submenu.append_item(ophcrack_action)
+        passwordattacks_submenu.append_item(ranbowcrack_action)
+        passwordattacks_submenu.append_item(rcrackimt_action)
+        passwordattacks_submenu.append_item(wordlists_action)
+        
         # Wireless Attacks submenu
         aircrackng_action = Gio.MenuItem.new("Aircrack-ng", "win.aircracking")
         airmon_ng_action = Gio.MenuItem.new("Airmon-ng", "win.airmon")
@@ -100,12 +199,6 @@ class MainWindow(Gtk.ApplicationWindow):
         wirelessattacks_submenu.append_item(aircrackng_action)
         wirelessattacks_submenu.append_item(airmon_ng_action)
         wirelessattacks_submenu.append_item(wifite_action)
-
-        # Data Base Assessment submenu
-        sqlmap_action = Gio.MenuItem.new("sqlmap", "win.sqlmap")
-        jsqlinjection_action = Gio.MenuItem.new("jsql Injection", "win.jsqlinjection")
-        databaseassessment_submenu.append_item(sqlmap_action)
-        databaseassessment_submenu.append_item(jsqlinjection_action)
 
         # Reverse Engineering submenu
         radare2_action = Gio.MenuItem.new("radare2", "win.radare2")
@@ -301,8 +394,9 @@ class MainWindow(Gtk.ApplicationWindow):
     # End of web tools submenu action
     
     # Define the functions for software inforamation gathering sub-submenu action
-    def amass(self,action,param):
+    def amass(self,subprocess):
         print('amass')
+
     
     def dmitry(self,action,param):
         print('dmitry')
@@ -355,7 +449,7 @@ class MyApp(Gtk.Application):
         self.connect('activate',self.on_activate)
         
     def on_activate(self, app):
-        self.win = MainWindow(application=app,title="Penetration App")
+        self.win = MainWindow(application=app,title="PenetrationApp")
         self.win.present()
 
        
