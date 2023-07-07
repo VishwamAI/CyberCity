@@ -38,6 +38,12 @@ class MainWindow(Gtk.ApplicationWindow):
             # Set a fixed size for the buttons
             btn.set_size_request(200, 200)
 
+            # Configure button properties to expand and shrink with window
+            btn.set_hexpand(True)
+            btn.set_vexpand(True)
+            btn.set_halign(Gtk.Align.CENTER)
+            btn.set_valign(Gtk.Align.CENTER)
+
             page = Page("Go back from " + button)
             self.stack.add_named(page, button)
 
