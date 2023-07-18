@@ -82,8 +82,6 @@ Please note that the current version of Penetration App provides a limited set o
 
 ### Future Updates
 
-- **Version 1.5.0 Ambada (Coming Soon)**: We are adding extra menus with new tools to further enhance your cybersecurity capabilities.
-
 - **Version 2.0 Beta (Coming Soon)**: We are planning significant updates that include the development of applications like Benmap, cydra, and Hellosploit. Additionally, BurpSuite will remain an essential tool within the toolkit.
 
 - **Version 2.5.0 Beetroot**: This update will bring significant UI improvements and further advancements in development.
