@@ -100,8 +100,6 @@ Please note that the current version of Penetration App provides a limited set o
 
 - **v1.0 Alpha (Completed)**: Initial release with basic functionality and toolset.
 
-- **v1.5.0 Ambada (Coming Soon)**: Additional menus and tools to expand the capabilities of the toolkit.
-
 - **v2.0 Beta (Coming Soon)**: Focus on the development of new applications while maintaining existing tools like BurpSuite.
 
 - **v2.5.0 Beetroot**: Major UI improvements and further advancements in development.
