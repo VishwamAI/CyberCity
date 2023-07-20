@@ -1,31 +1,25 @@
-window.background {
-  background-image: url("img/background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 button {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-  font-size: 16px;
-  transition: transform 0.3s ease-in-out;
-  border-radius: 50%;
-  /* Rounded corners */
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 16px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 50%;
+    /* Rounded corners */
 }
 
 button:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
-  transform: scale(1.05);
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: scale(1.05);
 }
 
 button.clicked {
-  background-color: #28a745;
-  /* Green */
-  border-color: #28a745;
+    background-color: #28a745;
+    /* Green */
+    border-color: #28a745;
 }
 
 GtkStack {
-  background-color: #f8f9fa;
+    background-color: #f8f9fa;
 }
