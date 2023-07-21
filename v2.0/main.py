@@ -7,6 +7,19 @@ from CyberToolsPage import CyberToolsPage
 from LinuxPage import LinuxPage
 from FeedbackPage import FeedbackPage
 from InformationGatheringPage import InformationGatheringPage
+from VulnerabilityAnalysisPage import VulnerabilityAnalysisPage
+from WebApplicationPage import WebApplicationPage
+from DataBaseAssessmentPage import DataBaseAssessmentPage
+from PasswordAttacksPage import PasswordAttacksPage
+from WirelessAttacksPage import WirelessAttacksPage
+from ReverseEngineeringPage import ReverseEngineeringPage
+from ExplorationToolsPage import ExplorationToolsPage
+from SniffingToolsPage import SniffingToolsPage
+from PostExploitationPage import PostExploitationPage
+from ForensicsPage import ForensicsPage
+from ReportingToolsPage import ReportingToolsPage
+from SocialEngineeringToolkitPage import SocialEngineeringToolkitPage
+from SystemServicesPage import SystemServicesPage
 from Page import Page
 
 class MainWindow(Gtk.ApplicationWindow):
@@ -20,23 +33,14 @@ class MainWindow(Gtk.ApplicationWindow):
         self.set_child(self.stack)
 
         self.grid = Gtk.Grid()
-        self.stack.add_named(self.grid, "Main Page")  # Changed from "main_page" to "Main Page"
-        self.current_page = "Main Page"  # Initialize current page to "Main Page"
+        self.stack.add_named(self.grid, "Main Page")
+        self.current_page = "Main Page"
 
-        # Initialize a list to store the navigation history.
         self.navigation_history = []
-
-        # Keep track of added pages.
         self.added_pages = set()
 
-        buttons = ["Cyber Tools", "Training Platforms", "CTF Platforms", "Job Calendars", "Research & Discovery","Cyber Frauds","Student Development Kit","Events & Entertainments","Feedback"]        
-        pages = {
-            "Cyber Tools": CyberToolsPage,
-            "Linux": LinuxPage,
-            "Feedback": FeedbackPage,
-            "InformationGathering": InformationGatheringPage,
-        }
-
+        buttons = ["Cyber Tools", "Training Platforms", "CTF Platforms", "Job Calendars", "Research & Discovery","Cyber Frauds","Student Development Kit","Events & Entertainments","Feedback"]
+        
         for i, button in enumerate(buttons):
             btn = Gtk.Button(label=button)
             btn.get_style_context().add_class("circular")
@@ -49,33 +53,41 @@ class MainWindow(Gtk.ApplicationWindow):
             btn.set_halign(Gtk.Align.CENTER)
             btn.set_valign(Gtk.Align.CENTER)
 
-            if button in pages and button not in self.added_pages:
-                page = pages[button]("Go back from " + self.current_page)
-                self.stack.add_named(page, button)
-                self.added_pages.add(button)
-
     def open_page(self, button, page_name):
         button.get_style_context().add_class('clicked')
 
-        # Only create and add a new page to the GtkStack if it does not exist yet.
         if page_name not in self.added_pages:
-            if page_name == "Linux":
-                page = LinuxPage("Go back from " + self.current_page)
-            elif page_name == "InformationGathering":
-                page = InformationGatheringPage("Go back from " + self.current_page)
+            page_classes = {
+                "Cyber Tools": CyberToolsPage,
+                "Linux": LinuxPage,
+                "Feedback": FeedbackPage,
+                "Information Gathering": InformationGatheringPage,
+                "Vulnerability Analysis": VulnerabilityAnalysisPage,
+                "WebApplication": WebApplicationPage,
+                "DataBase-Assessment": DataBaseAssessmentPage,
+                "Password Attacks": PasswordAttacksPage,
+                "Wireless Attacks": WirelessAttacksPage,
+                "Reverse Engineering": ReverseEngineeringPage,
+                "Exploration Tools": ExplorationToolsPage,
+                "Sniffing Tools": SniffingToolsPage,
+                "Post Exploitation": PostExploitationPage,
+                "Forensics": ForensicsPage,
+                "Reporting Tools": ReportingToolsPage,
+                "Social Engineering Toolkit": SocialEngineeringToolkitPage,
+                "System Services": SystemServicesPage,
+            }
+            if page_name in page_classes:
+                page = page_classes[page_name]("Go back from " + self.current_page)
+                self.stack.add_named(page, page_name)
+                self.added_pages.add(page_name)
             else:
                 page = Page("Go back from " + self.current_page)
 
-            self.stack.add_named(page, page_name)
-            self.added_pages.add(page_name)
-
-        # Store the current page in the navigation history before switching to the new page.
         if self.current_page != page_name:
             self.navigation_history.append(self.current_page)
 
         self.current_page = page_name
         self.stack.set_visible_child_name(page_name)
-
 
 class MyApp(Gtk.Application):
     def __init__(self, **kwargs):
