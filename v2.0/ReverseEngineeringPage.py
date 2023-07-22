@@ -15,8 +15,7 @@ class ReverseEngineeringPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-
-        tools = ["Amass","Dmitry","IKE-Scan","Legion(root)","Matelgo","Net Discover","Nmap","POF","Recon-Ng","Spider-Root"]
+        tools = ["Apktool", "Bytecode Viewer", "Clang", "Clang++", "Cutter", "Dex2jar", "Edb-debugger", "Ghidra", "Jadx-Gui", "NASM", "OllyDbg", "Radare2"]
         for i, tool in enumerate(tools):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")

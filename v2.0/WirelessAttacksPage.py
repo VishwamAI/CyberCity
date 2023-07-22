@@ -15,8 +15,7 @@ class WirelessAttacksPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-
-        tools = ["Amass","Dmitry","IKE-Scan","Legion(root)","Matelgo","Net Discover","Nmap","POF","Recon-Ng","Spider-Root"]
+        tools = ["Aircrack-ng", "Airgeddon", "coWPAtty", "FernWificracker", "Mdk3", "Mfoc", "Mfterm", "pixiewps", "Wifite"]
         for i, tool in enumerate(tools):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")

@@ -15,8 +15,7 @@ class WebApplicationPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-
-        tools = ["Amass","Dmitry","IKE-Scan","Legion(root)","Matelgo","Net Discover","Nmap","POF","Recon-Ng","Spider-Root"]
+        tools = ["Burp Suite", "Commix", "Httrack", "SkipFish", "SqlMap", "WebScarab", "WpScan", "ZAP"]
         for i, tool in enumerate(tools):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")

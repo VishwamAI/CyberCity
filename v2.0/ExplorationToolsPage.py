@@ -15,8 +15,7 @@ class ExplorationToolsPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-
-        tools = ["Amass","Dmitry","IKE-Scan","Legion(root)","Matelgo","Net Discover","Nmap","POF","Recon-Ng","Spider-Root"]
+        tools = ["Armitage", "BeEF", "CrackMapExec", "Metasploit", "msfvenom", "SearchSploit", "ShellNoob", "Social Engineering Toolkit", "sqlmap", "Terminator"]
         for i, tool in enumerate(tools):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")

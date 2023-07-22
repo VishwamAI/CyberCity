@@ -14,8 +14,7 @@ class SocialEngineeringToolkitPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-
-        tools = ["Amass","Dmitry","IKE-Scan","Legion(root)","Matelgo","Net Discover","Nmap","POF","Recon-Ng","Spider-Root"]
+        tools = ["The Backdoor Factory", "BeEF", "Maltego", "msfpayload", "Social Engineering Toolkit"]
         for i, tool in enumerate(tools):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")

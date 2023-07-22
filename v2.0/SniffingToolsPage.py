@@ -14,8 +14,7 @@ class SniffingToolsPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-
-        tools = ["Amass","Dmitry","IKE-Scan","Legion(root)","Matelgo","Net Discover","Nmap","POF","Recon-Ng","Spider-Root"]
+        tools = ["BetterCap", "Driftnet", "Ettercap", "Ferret", "Hamster", "MacChanger", "Minicom", "mitmproxy", "Responder", "scapy", "TCPDump", "Wireshark"]
         for i, tool in enumerate(tools):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")
