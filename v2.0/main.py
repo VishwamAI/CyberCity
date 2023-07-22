@@ -3,9 +3,12 @@ import sys
 import gi
 gi.require_version('Gtk', '4.0')
 from gi.repository import Gtk, Gdk
+# First page
 from CyberToolsPage import CyberToolsPage
-from LinuxPage import LinuxPage
 from FeedbackPage import FeedbackPage
+#second Page
+from LinuxPage import LinuxPage
+# third page
 from InformationGatheringPage import InformationGatheringPage
 from VulnerabilityAnalysisPage import VulnerabilityAnalysisPage
 from WebApplicationPage import WebApplicationPage
@@ -20,6 +23,8 @@ from ForensicsPage import ForensicsPage
 from ReportingToolsPage import ReportingToolsPage
 from SocialEngineeringToolkitPage import SocialEngineeringToolkitPage
 from SystemServicesPage import SystemServicesPage
+#Download pages
+from AmassPage import AmassPage
 from Page import Page
 
 class MainWindow(Gtk.ApplicationWindow):
@@ -75,6 +80,8 @@ class MainWindow(Gtk.ApplicationWindow):
                 "Reporting Tools": ReportingToolsPage,
                 "Social Engineering Toolkit": SocialEngineeringToolkitPage,
                 "System Services": SystemServicesPage,
+                "Amass": AmassPage,
+                
             }
             if page_name in page_classes:
                 page = page_classes[page_name]("Go back from " + self.current_page)

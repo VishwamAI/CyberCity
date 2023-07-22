@@ -15,8 +15,7 @@ class DataBaseAssessmentPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-
-        tools = ["Amass","Dmitry","IKE-Scan","Legion(root)","Matelgo","Net Discover","Nmap","POF","Recon-Ng","Spider-Root"]
+        tools = ["JSQL Injection", "mdbtools", "OScanner", "SidGuesser", "SQLdict", "DB Browser for SQLite", "sqlmap", "SQL Ninja", "SQLsus"]
         for i, tool in enumerate(tools):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")
