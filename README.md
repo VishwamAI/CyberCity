@@ -6,7 +6,7 @@
 | ------------ | ------ | ------ |
 | Ubuntu       | deb    | [Download PenetrationAppv1.0.deb](https://github.com/Exploit0xfffff/PenetrationApp/releases/download/v1.0.0/PenetrationAppv1.0.deb) |
 | All Linux Versions | snap | coming soon |
-| Developer    | clone  | `git clone https://github.com/Exploit0xfffff/PenetrationApp` |
+| Developer    | clone  | `https://github.com/Exploit0xfffff/CyberCity` |
 
 ### Ubuntu Installation
 
@@ -20,6 +20,13 @@ sudo dpkg -i PenetrationAppv1.0.deb
 sudo apt remove penetration-app
 ```
 
+## Developers
+
+```bash
+git clone https://github.com/Exploit0xfffff/CyberCity
+cd CyberCity/v2.0
+python3 main.py
+```
 ## Description
 
 Penetration App is a comprehensive cybersecurity toolkit that offers a wide range of tools and resources for performing penetration testing and enhancing your cybersecurity skills. It is designed to be a one-stop-shop for all your cybersecurity needs, providing a collection of tools, platforms, and resources in a user-friendly interface.
