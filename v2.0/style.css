@@ -25,8 +25,45 @@ GtkStack {
 }
 
 label {
+    font-size: 24px;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 2px #000000;
+}
+
+button {
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #4BC0C8 0%, #C779D0 51%, #FEAC5E 100%);
+    color: #FFF;
     font-size: 18px;
-    color: #000;
+    font-weight: bold;
+    padding: 10px 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: #FEAC5E;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.expander {
+    background-color: #F5F5F5;
+    border: 2px solid #CCCCCC;
+    padding: 10px;
+}
+
+.grid {
+    background-color: #ECECEC;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+label {
+    font-size: 18px;
+    color: #ffff;
 }
 
 button {
