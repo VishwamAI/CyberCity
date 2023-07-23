@@ -23,8 +23,20 @@ from ForensicsPage import ForensicsPage
 from ReportingToolsPage import ReportingToolsPage
 from SocialEngineeringToolkitPage import SocialEngineeringToolkitPage
 from SystemServicesPage import SystemServicesPage
-#Download pages
+#InformationGatheringPage Download pages
 from AmassPage import AmassPage
+from DmitryPage import DmitryPage
+from ikescanpage import IkeScanPage
+from LegionPage import LegionPage
+from Maltegopage import MaltegoPage
+from NetDiscoverPage import NetDiscoverPage
+from NmapPage import NmapPage
+from ReconNgPage import ReconNgPage
+
+#VulnerabilityAnalysisPage Download Pages
+from GVMPage import GVMPage
+from LynisPage import LynisPage
+from NiktoPage import NiktoPage
 from Page import Page
 
 class MainWindow(Gtk.ApplicationWindow):
@@ -81,7 +93,16 @@ class MainWindow(Gtk.ApplicationWindow):
                 "Social Engineering Toolkit": SocialEngineeringToolkitPage,
                 "System Services": SystemServicesPage,
                 "Amass": AmassPage,
-                
+                "Dmitry":DmitryPage,
+                "Ike-Scan": IkeScanPage,
+                "Legion": LegionPage,
+                "Maltego": MaltegoPage,
+                "NetDiscover": NetDiscoverPage,
+                "Nmap": NmapPage,
+                "Recon-Ng": ReconNgPage,
+                "GVM": GVMPage,
+                "Lynis": LynisPage,
+                "Nikto": NiktoPage
             }
             if page_name in page_classes:
                 page = page_classes[page_name]("Go back from " + self.current_page)
