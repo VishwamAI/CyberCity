@@ -1,11 +1,10 @@
 import gi
 import subprocess
-import urllib.request
-from io import BytesIO
 gi.require_version('Gtk', '4.0')
-from gi.repository import Gtk, GdkPixbuf, Gdk,GLib, Gio
+from gi.repository import Gtk, GdkPixbuf, Gdk, GLib, Gio
 from Page import Page
 import webbrowser
+
 class AmassPage(Page):
     def __init__(self, back_label):
         super().__init__(back_label)
@@ -57,33 +56,46 @@ class AmassPage(Page):
         link.set_use_markup(True)
         grid.attach(link, 1, 2, 1, 1)
 
-        image_upload_button = Gtk.Button(label="Upload Image")
-        image_upload_button.connect("clicked", self.on_image_upload_clicked)
-        grid.attach(image_upload_button, 0, 3, 1, 1)
-
-        url_entry = Gtk.Entry()
-        url_entry.set_placeholder_text("Enter Image URL")
-        grid.attach(url_entry, 0, 4, 1, 1)
-
-        url_button = Gtk.Button(label="Load Image from URL")
-        url_button.connect("clicked", self.load_image_from_url, url_entry)
-        grid.attach(url_button, 1, 4, 1, 1)
-
+        # Button for installation or uninstallation of Amass
         self.install_uninstall_button = Gtk.Button()
-        grid.attach(self.install_uninstall_button, 1, 3, 1, 1)
+        self.install_uninstall_button.set_child(Gtk.Image.new_from_file('path/to/install/icon.png'))
+        grid.attach(self.install_uninstall_button, 0, 3, 3, 1)
 
-        share_btn = Gtk.Button(label="Share snap")
+        # Add a new grid to segregate functionalities in a more organized way
+        button_grid = Gtk.Grid()
+        button_grid.set_row_spacing(10)
+        button_grid.set_column_spacing(10)
+        button_grid.set_halign(Gtk.Align.CENTER)
+        grid.attach(button_grid, 0, 4, 3, 1)
+
+        # Button for user manual
+        user_manual_button = Gtk.Button()
+        user_manual_button.set_child(Gtk.Image.new_from_file('img/github.png'))
+        user_manual_button.connect("clicked", self.user_manual)
+        button_grid.attach(user_manual_button, 0, 0, 1, 1)
+
+        # Button for sharing the snap
+        share_icon = Gtk.Image.new_from_file('img/snapcraft.png')
+        share_btn = Gtk.Button()
+        share_btn.set_child(share_icon)
         share_btn.connect("clicked", self.share_snap)
-        grid.attach(share_btn, 0, 5, 3, 1)
+        button_grid.attach(share_btn, 1, 0, 1, 1)
+
+        # Button for about Amass, now at the bottom
+        about_button = Gtk.Button()
+        about_button.set_child(Gtk.Image.new_from_file('img/owasp_logo.png'))
+        about_button.connect("clicked", self.about)
+        button_grid.attach(about_button, 2, 0, 1, 1)
 
         self._install_handler_id = None
         self._uninstall_handler_id = None
 
         self.check_amass_installed()
 
+    # Rest of the code...
     def check_amass_installed(self):
         try:
-            output = subprocess.check_output(['which', 'amass'])
+            output = subprocess.check_output(['which', 'amass'], stderr=subprocess.STDOUT)
             if 'amass' in output.decode():
                 self.install_uninstall_button.set_label("Uninstall")
                 if self._install_handler_id is not None:
@@ -95,60 +107,10 @@ class AmassPage(Page):
                     self.install_uninstall_button.disconnect(self._uninstall_handler_id)
                 self._install_handler_id = self.install_uninstall_button.connect("clicked", self.install_amass)
         except subprocess.CalledProcessError:
-            print("Failed to check if Amass is installed.")
-    # rest of your code...
-
-    def on_image_upload_clicked(self, button):
-        dialog = Gtk.FileChooserDialog()
-        dialog.set_title("Please choose an image")
-        dialog.set_transient_for(self.get_root())
-        dialog.set_action(Gtk.FileChooserAction.OPEN)
-        dialog.add_button("Cancel", Gtk.ResponseType.CANCEL)
-        dialog.add_button("Open", Gtk.ResponseType.OK)
-
-        filter_png = Gtk.FileFilter()
-        filter_png.set_name("PNG files")
-        filter_png.add_mime_type("image/png")
-        dialog.add_filter(filter_png)
-
-        filter_jpeg = Gtk.FileFilter()
-        filter_jpeg.set_name("JPEG files")
-        filter_jpeg.add_mime_type("image/jpeg")
-        dialog.add_filter(filter_jpeg)
-
-        dialog.connect("response", self.on_dialog_response)
-        dialog.show()
-
-    def on_dialog_response(self, dialog, response):
-        if response == Gtk.ResponseType.OK:
-            file_path = dialog.get_filename()
-            try:
-                logo_pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_scale(file_path, 300, 300, True)
-            except GLib.Error as e:
-                print(f"Failed to load image: {e}")
-                theme = Gtk.IconTheme.get_for_display(Gdk.Display.get_default())
-                logo_pixbuf = theme.load_icon("image-missing", 300, 0)
-
-            logo = Gtk.Image.new_from_pixbuf(logo_pixbuf)
-            self.grid.attach(logo, 2, 0, 1, 1)
-            self.show_all()
-        elif response == Gtk.ResponseType.CANCEL:
-            dialog.destroy()
-
-    def load_image_from_url(self, button, entry):
-        url = entry.get_text()
-        try:
-            response = urllib.request.urlopen(url)
-            input_stream = Gio.MemoryInputStream.new_from_data(response.read(), None)
-            logo_pixbuf = GdkPixbuf.Pixbuf.new_from_stream_at_scale(input_stream, 300, 300, True, None)
-        except Exception as e:
-            print(f"Failed to load image from URL: {e}")
-            theme = Gtk.IconTheme.get_for_display(Gdk.Display.get_default())
-            logo_pixbuf = theme.load_icon("image-missing", 300, 0)
-
-        logo = Gtk.Image.new_from_pixbuf(logo_pixbuf)
-        self.grid.attach(logo, 2, 0, 1, 1)
-        self.show_all()
+            self.install_uninstall_button.set_label("Install")
+            if self._uninstall_handler_id is not None:
+                self.install_uninstall_button.disconnect(self._uninstall_handler_id)
+            self._install_handler_id = self.install_uninstall_button.connect("clicked", self.install_amass)
 
     def install_amass(self, button):
         try:
@@ -158,64 +120,53 @@ class AmassPage(Page):
                 buttons=Gtk.ButtonsType.OK,
                 text="Installing...",
             )
-            dialog.run()
+            dialog.connect("response", self.on_dialog_response_install)
+            dialog.show()
+        except Exception as e:
+            print(f"Failed to install Amass: {e}")
+
+    def on_dialog_response_install(self, dialog, response_id):
+        if response_id == Gtk.ResponseType.OK:
             dialog.destroy()
-            subprocess.run(['pkexec', 'snap', 'install', 'amass'], check=True)
-            self.install_uninstall_button.set_label("Uninstall")
-            self.install_uninstall_button.disconnect_by_func(self.install_amass)
-            self.install_uninstall_button.connect("clicked", self.uninstall_amass)
-        except subprocess.CalledProcessError:
-            print("Failed to install Amass.")
+            try:
+                subprocess.run(['pkexec', 'snap', 'install', 'amass'], check=True)
+                self.install_uninstall_button.set_label("Uninstall")
+                self.install_uninstall_button.disconnect_by_func(self.install_amass)
+                self.install_uninstall_button.connect("clicked", self.uninstall_amass)
+            except subprocess.CalledProcessError:
+                print("Failed to install Amass.")
+        else:
+            dialog.destroy()
 
     def uninstall_amass(self, button):
-        try:
-            dialog = Gtk.MessageDialog(
-                transient_for=self.get_root(),
-                message_type=Gtk.MessageType.INFO,
-                buttons=Gtk.ButtonsType.OK,
-                text="Uninstalling...",
-            )
-            dialog.run()
-            dialog.destroy()
-            subprocess.run(['pkexec', 'snap', 'remove', 'amass'], check=True)
-            self.install_uninstall_button.set_label("Install")
-            self.install_uninstall_button.disconnect_by_func(self.uninstall_amass)
-            self.install_uninstall_button.connect("clicked", self.install_amass)
-        except subprocess.CalledProcessError:
-            print("Failed to uninstall Amass.")
-
-    def on_image_upload_clicked(self, button):
-        dialog = Gtk.FileChooserDialog(
-            title="Please choose a file", 
-            parent=self.get_toplevel(), 
-            action=Gtk.FileChooserAction.OPEN,
-            buttons=(
-                Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, 
-                Gtk.STOCK_OPEN, Gtk.ResponseType.OK
-            )
+        dialog = Gtk.MessageDialog(
+            transient_for=self.get_root(),
+            message_type=Gtk.MessageType.INFO,
+            buttons=Gtk.ButtonsType.OK,
+            text="Uninstalling...",
         )
+        dialog.connect("response", self.on_dialog_response_uninstall)
+        dialog.show()
 
-        img_filter = Gtk.FileFilter()
-        img_filter.set_name("Images")
-        img_filter.add_mime_type("image/*")
-        dialog.add_filter(img_filter)
-
-        video_filter = Gtk.FileFilter()
-        video_filter.set_name("Videos")
-        video_filter.add_mime_type("video/*")
-        dialog.add_filter(video_filter)
-
-        link_filter = Gtk.FileFilter()
-        link_filter.set_name("Web Links")
-        link_filter.add_pattern("*.html")  # You might want to refine this pattern
-        dialog.add_filter(link_filter)
-
-        response = dialog.run()
-
-        if response == Gtk.ResponseType.OK:
-            print(f"File selected: {dialog.get_filename()}")
-
-        dialog.destroy()
+    def on_dialog_response_uninstall(self, dialog, response_id):
+        if response_id == Gtk.ResponseType.OK:
+            dialog.destroy()
+            try:
+                subprocess.run(['pkexec', 'snap', 'remove', 'amass'], check=True)
+                self.install_uninstall_button.set_label("Install")
+                self.install_uninstall_button.disconnect_by_func(self.uninstall_amass)
+                self.install_uninstall_button.connect("clicked", self.install_amass)
+            except subprocess.CalledProcessError:
+                print("Failed to uninstall Amass.")
+        else:
+            dialog.destroy()
 
     def share_snap(self, button):
-        webbrowser.open("https://snapcraft.io/amass", new=2)
+        webbrowser.open('https://snapcraft.io/amass')
+
+    def user_manual(self, button):
+        webbrowser.open('https://github.com/OWASP/Amass/blob/master/doc/user_guide.md')
+
+    def about(self, button):
+        webbrowser.open('https://owasp.org/www-project-amass/')
+
