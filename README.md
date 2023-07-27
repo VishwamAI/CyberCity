@@ -99,7 +99,7 @@ Please note that the current version of Penetration App provides a limited set o
 | ----------------- | ----------- |
 | src               | Contains the main source code |
 | img               | Contains images used in the project |
-| target/release    | Executable file for v1.5 (Ambada) release |
+| target/release    | Executable file for v2.0 (Beta) release |
 
 ### Release History
 
