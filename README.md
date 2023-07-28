@@ -6,7 +6,7 @@
 | ------------ | ------ | ------ |
 | Ubuntu       | deb    | [Download PenetrationAppv1.0.deb](https://github.com/Exploit0xfffff/PenetrationApp/releases/download/v1.0.0/PenetrationAppv1.0.deb) |
 | All Linux Versions | snap | coming soon |
-| Developer    | clone  | `https://github.com/Exploit0xfffff/CyberCity` |
+| Developer    | clone  | `git clone https://github.com/Exploit0xfffff/CyberCity` |
 
 ### Ubuntu Installation
 
