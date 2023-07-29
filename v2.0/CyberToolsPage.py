@@ -8,11 +8,18 @@ class CyberToolsPage(Page):
         self.grid = Gtk.Grid()
         self.append(self.grid)
 
-        tools = ["Linux","Web Applications", "MacOS", "Windows","Mobile Applications"]
-        for i, tool in enumerate(tools):
+        tools = {
+            "🐧 Linux": "Linux",
+            "🌐 Web Applications": "WebApplication",
+            "🍎 MacOS": "MacOS",
+            "🪟 Windows": "Windows",
+            "📱 Mobile Applications": "MobileApplications"
+        }
+
+        for i, (tool, toolPage) in enumerate(tools.items()):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")
-            btn.connect("clicked", self.open_page, tool)
+            btn.connect("clicked", self.open_page, toolPage)
             self.grid.attach(btn, i % 3, i // 3, 1, 1)
             btn.set_size_request(200, 200)
 
@@ -21,7 +28,7 @@ class CyberToolsPage(Page):
             btn.set_halign(Gtk.Align.CENTER)
             btn.set_valign(Gtk.Align.CENTER)
 
-    def open_page(self, button, page_name):
+    def open_page(self, button, page_class):
         button.get_style_context().add_class('clicked')
         main_window = self.get_root()
-        main_window.open_page(button, page_name)
+        main_window.open_page(button, page_class)

@@ -3,11 +3,16 @@ import sys
 import gi
 gi.require_version('Gtk', '4.0')
 from gi.repository import Gtk, Gdk
+
 # First page
 from CyberToolsPage import CyberToolsPage
+from TrainingPlatformsPage import TrainingPlatformsPage
+from CTFPlatformsPage import CTFPlatformsPage
 from FeedbackPage import FeedbackPage
+
 #second Page
 from LinuxPage import LinuxPage
+
 # third page
 from InformationGatheringPage import InformationGatheringPage
 from VulnerabilityAnalysisPage import VulnerabilityAnalysisPage
@@ -23,6 +28,52 @@ from ForensicsPage import ForensicsPage
 from ReportingToolsPage import ReportingToolsPage
 from SocialEngineeringToolkitPage import SocialEngineeringToolkitPage
 from SystemServicesPage import SystemServicesPage
+
+#InformationGatheringPage Download pages
+from AmassPage import AmassPage
+from DmitryPage import DmitryPage
+from ikescanpage import IkeScanPage
+from LegionPage import LegionPage
+from Maltegopage import MaltegoPage
+from NetDiscoverPage import NetDiscoverPage
+from NmapPage import NmapPage
+from ReconNgPage import ReconNgPage
+
+#VulnerabilityAnalysisPage Download Pages
+from GVMPage import GVMPage
+from LynisPage import LynisPage
+from NiktoPage import NiktoPage
+from Page import Page
+
+# main.py
+import sys
+import gi
+gi.require_version('Gtk', '4.0')
+from gi.repository import Gtk, Gdk
+
+# First page
+from CyberToolsPage import CyberToolsPage
+from FeedbackPage import FeedbackPage
+
+#second Page
+from LinuxPage import LinuxPage
+
+# third page
+from InformationGatheringPage import InformationGatheringPage
+from VulnerabilityAnalysisPage import VulnerabilityAnalysisPage
+from WebApplicationPage import WebApplicationPage
+from DataBaseAssessmentPage import DataBaseAssessmentPage
+from PasswordAttacksPage import PasswordAttacksPage
+from WirelessAttacksPage import WirelessAttacksPage
+from ReverseEngineeringPage import ReverseEngineeringPage
+from ExplorationToolsPage import ExplorationToolsPage
+from SniffingToolsPage import SniffingToolsPage
+from PostExploitationPage import PostExploitationPage
+from ForensicsPage import ForensicsPage
+from ReportingToolsPage import ReportingToolsPage
+from SocialEngineeringToolkitPage import SocialEngineeringToolkitPage
+from SystemServicesPage import SystemServicesPage
+
 #InformationGatheringPage Download pages
 from AmassPage import AmassPage
 from DmitryPage import DmitryPage
@@ -56,12 +107,24 @@ class MainWindow(Gtk.ApplicationWindow):
         self.navigation_history = []
         self.added_pages = set()
 
-        buttons = ["Cyber Tools", "Training Platforms", "CTF Platforms", "Job Calendars", "Research & Discovery","Cyber Frauds","Student Development Kit","Events & Entertainments","Feedback"]
-        
-        for i, button in enumerate(buttons):
-            btn = Gtk.Button(label=button)
-            btn.get_style_context().add_class("circular")
-            btn.connect("clicked", self.open_page, button)
+        buttons = {
+            "Cyber Tools": "🏢",
+            "Training Platforms": "🏫",
+            "CTF Platforms": "🏟️",
+            "Job Calendars": "📅",
+            "Research\n & Discovery": "🧪",
+            "Cyber Frauds": "👮",
+            "Student\nDevelopment Kit": "🏞️",
+            "Events\n & Entertainments": "🎡",
+            "Feedback": "📩"
+        }
+
+
+        for i, (tool, emoji) in enumerate(buttons.items()):
+        # Change label from "{emoji}\n{text}" to "{emoji} {text}"
+            btn = Gtk.Button(label=f"{emoji} {tool}")
+            btn.get_style_context().add_class("kite")
+            btn.connect("clicked", self.open_page, tool)
             self.grid.attach(btn, i % 3, i // 3, 1, 1)
             btn.set_size_request(200, 200)
 
@@ -69,6 +132,7 @@ class MainWindow(Gtk.ApplicationWindow):
             btn.set_vexpand(True)
             btn.set_halign(Gtk.Align.CENTER)
             btn.set_valign(Gtk.Align.CENTER)
+
 
     def open_page(self, button, page_name):
         button.get_style_context().add_class('clicked')
@@ -102,7 +166,10 @@ class MainWindow(Gtk.ApplicationWindow):
                 "Recon-Ng": ReconNgPage,
                 "GVM": GVMPage,
                 "Lynis": LynisPage,
-                "Nikto": NiktoPage
+                "Nikto": NiktoPage,
+                "Training Platforms": TrainingPlatformsPage, 
+                "CTF Platforms":CTFPlatformsPage,
+                
             }
             if page_name in page_classes:
                 page = page_classes[page_name]("Go back from " + self.current_page)

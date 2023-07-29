@@ -14,11 +14,23 @@ class InformationGatheringPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-        tools = ["Amass", "Dmitry", "IKE-Scan", "Legion", "Maltego", "Net Discover", "Nmap", "Recon-Ng"]
-        for i, tool in enumerate(tools):
+
+        # Define a dictionary mapping tools to emojis
+        tools = {
+            "🅰️ Amass": "Amass",
+            "🅳️ Dmitry": "Dmitry",
+            "🅸️ IKE-Scan": "IKE-Scan",
+            "🅻️ Legion": "Legion",
+            "🅼️ Maltego": "Maltego",
+            "🅽️ Net Discover": "Net Discover",
+            "🅽️ Nmap": "Nmap",
+            "🆁️ Recon-Ng": "Recon-Ng"
+        }
+
+        for i, (tool, toolPage) in enumerate(tools.items()):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")
-            btn.connect("clicked", self.open_page, tool)
+            btn.connect("clicked", self.open_page, toolPage)
             self.grid.attach(btn, i % 3, i // 3, 1, 1)
             btn.set_size_request(200, 200)
 

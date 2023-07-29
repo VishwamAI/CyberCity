@@ -14,11 +14,27 @@ class SniffingToolsPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-        tools = ["BetterCap", "Driftnet", "Ettercap", "Ferret", "Hamster", "MacChanger", "Minicom", "mitmproxy", "Responder", "scapy", "TCPDump", "Wireshark"]
-        for i, tool in enumerate(tools):
+        
+        # Define a dictionary mapping tools to emojis
+        tools = {
+            "🅱️ BetterCap": "BetterCap",
+            "🅳️ Driftnet": "Driftnet",
+            "🅴️ Ettercap": "Ettercap",
+            "🅵️ Ferret": "Ferret",
+            "🅷️ Hamster": "Hamster",
+            "🅼️ MacChanger": "MacChanger",
+            "🅼️ Minicom": "Minicom",
+            "🅼️ mitmproxy": "mitmproxy",
+            "🆁️ Responder": "Responder",
+            "🆂️ scapy": "scapy",
+            "🆃️ TCPDump": "TCPDump",
+            "🆆️ Wireshark": "Wireshark"
+        }
+
+        for i, (tool, toolPage) in enumerate(tools.items()):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")
-            btn.connect("clicked", self.open_page, tool)
+            btn.connect("clicked", self.open_page, toolPage)
             self.grid.attach(btn, i % 3, i // 3, 1, 1)
             btn.set_size_request(200, 200)
 

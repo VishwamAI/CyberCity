@@ -8,6 +8,7 @@ class Page(Gtk.Box):
         icon = Gtk.Image.new_from_icon_name("go-previous-symbolic")
         go_back_button.set_child(icon)
         go_back_button.connect("clicked", self.go_back)
+        go_back_button.get_style_context().add_class('go-back-button')  # Add this line
 
         self.append(go_back_button)
 

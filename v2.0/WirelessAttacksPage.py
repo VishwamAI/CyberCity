@@ -15,11 +15,24 @@ class WirelessAttacksPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-        tools = ["Aircrack-ng", "Airgeddon", "coWPAtty", "FernWificracker", "Mdk3", "Mfoc", "Mfterm", "pixiewps", "Wifite"]
-        for i, tool in enumerate(tools):
+
+        # Define a dictionary mapping tools to emojis
+        tools = {
+            "🅰️ Aircrack-ng": "Aircrack-ng",
+            "🅰️ Airgeddon": "Airgeddon",
+            "🅲️ coWPAtty": "coWPAtty",
+            "🅵️ FernWificracker": "FernWificracker",
+            "🅼️ Mdk3": "Mdk3",
+            "🅼️ Mfoc": "Mfoc",
+            "🅼️ Mfterm": "Mfterm",
+            "🅿️ pixiewps": "pixiewps",
+            "🆆️ Wifite": "Wifite"
+        }
+
+        for i, (tool, toolPage) in enumerate(tools.items()):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")
-            btn.connect("clicked", self.open_page, tool)
+            btn.connect("clicked", self.open_page, toolPage)
             self.grid.attach(btn, i % 3, i // 3, 1, 1)
             btn.set_size_request(200, 200)
 

@@ -1,6 +1,7 @@
 from gi.repository import Gtk
 import webbrowser
 from Page import Page
+
 class FeedbackPage(Page):
     def __init__(self, back_label):
         super().__init__(back_label)
@@ -8,9 +9,14 @@ class FeedbackPage(Page):
         self.grid = Gtk.Grid()
         self.append(self.grid)
 
-        tools = ["Email", "LinkedIn", "Facebook", "Youtube"]
+        tools = {
+            "Email": "✉️",
+            "LinkedIn": "🔗",
+            "Facebook": "📘",
+            "Youtube": "📺"
+        }
         for i, tool in enumerate(tools):
-            btn = Gtk.Button(label=tool)
+            btn = Gtk.Button(label=tools[tool])
             btn.get_style_context().add_class("circular")
             btn.connect("clicked", self.open_page, tool)
             self.grid.attach(btn, i % 3, i // 3, 1, 1)

@@ -15,11 +15,23 @@ class WebApplicationPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-        tools = ["Burp Suite", "Commix", "Httrack", "SkipFish", "SqlMap", "WebScarab", "WpScan", "ZAP"]
-        for i, tool in enumerate(tools):
+
+        # Define a dictionary mapping tools to emojis
+        tools = {
+            "🅱️ Burp Suite": "Burp Suite",
+            "🅲️ Commix": "Commix",
+            "🅷️ Httrack": "Httrack",
+            "🆂️ SkipFish": "SkipFish",
+            "🆂️ SqlMap": "SqlMap",
+            "🆆️ WebScarab": "WebScarab",
+            "🆆️ WpScan": "WpScan",
+            "🅾️ ZAP": "ZAP"
+        }
+
+        for i, (tool, toolPage) in enumerate(tools.items()):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")
-            btn.connect("clicked", self.open_page, tool)
+            btn.connect("clicked", self.open_page, toolPage)
             self.grid.attach(btn, i % 3, i // 3, 1, 1)
             btn.set_size_request(200, 200)
 

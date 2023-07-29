@@ -14,11 +14,20 @@ class SocialEngineeringToolkitPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-        tools = ["The Backdoor Factory", "BeEF", "Maltego", "msfpayload", "Social Engineering Toolkit"]
-        for i, tool in enumerate(tools):
-            btn = Gtk.Button(label=tool)
+
+        # Add appropriate icons (emojis) corresponding to each tool
+        tools = {
+            "🏭 The Backdoor Factory": "The Backdoor Factory",
+            "🥩 BeEF": "BeEF",
+            "🌍 Maltego": "Maltego",
+            "🚀 msfpayload": "msfpayload",
+            "🔧 Social Engineering Toolkit": "Social Engineering Toolkit"
+        }
+
+        for i, (tool_label, tool_page) in enumerate(tools.items()):
+            btn = Gtk.Button(label=tool_label)
             btn.get_style_context().add_class("circular")
-            btn.connect("clicked", self.open_page, tool)
+            btn.connect("clicked", self.open_page, tool_page)
             self.grid.attach(btn, i % 3, i // 3, 1, 1)
             btn.set_size_request(200, 200)
 

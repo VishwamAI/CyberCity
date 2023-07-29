@@ -15,11 +15,25 @@ class ExplorationToolsPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-        tools = ["Armitage", "BeEF", "CrackMapExec", "Metasploit", "msfvenom", "SearchSploit", "ShellNoob", "Social Engineering Toolkit", "sqlmap", "Terminator"]
-        for i, tool in enumerate(tools):
+
+        # Define a dictionary mapping tools to emojis
+        tools = {
+            "🅰️ Armitage": "Armitage",
+            "🅱️ BeEF": "BeEF",
+            "🅲️ CrackMapExec": "CrackMapExec",
+            "🅼️ Metasploit": "Metasploit",
+            "🅼️ msfvenom": "msfvenom",
+            "🆂️ SearchSploit": "SearchSploit",
+            "🆂️ ShellNoob": "ShellNoob",
+            "🆂️ Social Engineering Toolkit": "Social Engineering Toolkit",
+            "🆂️ sqlmap": "sqlmap",
+            "🆃️ Terminator": "Terminator"
+        }
+
+        for i, (tool, toolPage) in enumerate(tools.items()):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")
-            btn.connect("clicked", self.open_page, tool)
+            btn.connect("clicked", self.open_page, toolPage)
             self.grid.attach(btn, i % 3, i // 3, 1, 1)
             btn.set_size_request(200, 200)
 
@@ -32,3 +46,4 @@ class ExplorationToolsPage(Page):
         button.get_style_context().add_class('clicked')
         main_window = self.get_root()
         main_window.open_page(button, page_name)
+

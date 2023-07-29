@@ -14,11 +14,20 @@ class ReportingToolsPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-        tools = ["CherryTree", "Cutycapt", "EyeWitness", "Faraday", "Maltego"]
-        for i, tool in enumerate(tools):
-            btn = Gtk.Button(label=tool)
+        
+        # Add appropriate icons (emojis) corresponding to each tool
+        tools = {
+            "🍒 CherryTree": "CherryTree",
+            "✂️ Cutycapt": "Cutycapt",
+            "👁️ EyeWitness": "EyeWitness",
+            "📡 Faraday": "Faraday",
+            "🌍 Maltego": "Maltego"
+        }
+        
+        for i, (tool_label, tool_page) in enumerate(tools.items()):
+            btn = Gtk.Button(label=tool_label)
             btn.get_style_context().add_class("circular")
-            btn.connect("clicked", self.open_page, tool)
+            btn.connect("clicked", self.open_page, tool_page)
             self.grid.attach(btn, i % 3, i // 3, 1, 1)
             btn.set_size_request(200, 200)
 

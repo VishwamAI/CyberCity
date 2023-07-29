@@ -1,23 +1,21 @@
 button {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
-    font-size: 16px;
-    transition: transform 0.3s ease-in-out;
-    border-radius: 50%;
-    /* Rounded corners */
+    background-color: #2d2d2d;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #FFFFFF;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 10px;
 }
 
 button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    transform: scale(1.05);
+    background-color: #464646;
+    transform: scale(1.2);
 }
 
-button.clicked {
-    background-color: #28a745;
-    /* Green */
-    border-color: #28a745;
+button:active {
+    background-color: #1f1f1f;
 }
 
 GtkStack {
@@ -29,24 +27,6 @@ label {
     color: #ffffff;
     font-family: 'Arial', sans-serif;
     text-shadow: 2px 2px 2px #000000;
-}
-
-button {
-    border-radius: 10px;
-    background-image: linear-gradient(to right, #4BC0C8 0%, #C779D0 51%, #FEAC5E 100%);
-    color: #FFF;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px 20px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-}
-
-button:hover {
-    background-color: #FEAC5E;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
 }
 
 .expander {
@@ -63,15 +43,18 @@ button:hover {
 
 label {
     font-size: 18px;
-    color: #ffff;
+    color: #ffffff;
 }
 
-button {
-    border-radius: 10px;
-    background-image: linear-gradient(to right, #4BC0C8 0%, #C779D0 51%, #FEAC5E 100%);
-    color: #FFF;
+button.go-back-button {
+    color: red;
+}
+/* Add color to the title */
+label#title {
+    color: #4A90E2; /* Change to your preferred color */
 }
 
-.expander {
-    background-color: #F5F5F5;
+/* Change the color of the text inside the expander when it's expanded */
+expander label {
+    color: #7B7B7B; /* Change to your preferred color */
 }

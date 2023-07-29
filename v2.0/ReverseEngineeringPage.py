@@ -15,11 +15,27 @@ class ReverseEngineeringPage(Page):
         scroll.set_child(self.grid)
 
         self.append(scroll)
-        tools = ["Apktool", "Bytecode Viewer", "Clang", "Clang++", "Cutter", "Dex2jar", "Edb-debugger", "Ghidra", "Jadx-Gui", "NASM", "OllyDbg", "Radare2"]
-        for i, tool in enumerate(tools):
+
+        # Define a dictionary mapping tools to emojis
+        tools = {
+            "🅰️ Apktool": "Apktool",
+            "🅱️ Bytecode Viewer": "Bytecode Viewer",
+            "🅲️ Clang": "Clang",
+            "🅲️ Clang++": "Clang++",
+            "🅲️ Cutter": "Cutter",
+            "🅳️ Dex2jar": "Dex2jar",
+            "🅴️ Edb-debugger": "Edb-debugger",
+            "🅶️ Ghidra": "Ghidra",
+            "🅹️ Jadx-Gui": "Jadx-Gui",
+            "🅽️ NASM": "NASM",
+            "🅾️ OllyDbg": "OllyDbg",
+            "🆁️ Radare2": "Radare2"
+        }
+
+        for i, (tool, toolPage) in enumerate(tools.items()):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")
-            btn.connect("clicked", self.open_page, tool)
+            btn.connect("clicked", self.open_page, toolPage)
             self.grid.attach(btn, i % 3, i // 3, 1, 1)
             btn.set_size_request(200, 200)
 

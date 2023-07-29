@@ -5,6 +5,27 @@ from gi.repository import Gtk, GdkPixbuf, Gdk, GLib, Gio
 from Page import Page
 import webbrowser
 
+class DescriptionModule:
+    def __init__(self, description_text):
+        self.description_text = description_text
+        self.description_label = None
+        self.expander = None
+        self.create_module()
+
+    def create_module(self):
+        self.description_label = Gtk.Label()
+        self.description_label.set_name("description")  # This connects the widget with the CSS ID
+        self.description_label.set_wrap(True)
+        self.description_label.set_width_chars(40)
+        self.description_label.set_markup(self.description_text)
+
+        self.expander = Gtk.Expander(label="Description")
+        self.expander.set_child(self.description_label)
+
+    def get_module(self):
+        return self.expander
+
+
 class AmassPage(Page):
     def __init__(self, back_label):
         super().__init__(back_label)
@@ -38,14 +59,8 @@ class AmassPage(Page):
         title.set_markup('<span size="xx-large">Amass</span>')
         grid.attach(title, 1, 0, 1, 1)
 
-        description = Gtk.Label()
-        description.set_wrap(True)
-        description.set_width_chars(40)
-        description.set_markup('Amass is a powerful cybersecurity tool used for network mapping and assets discovery.')
-        
-        expander = Gtk.Expander(label="Description")
-        expander.set_child(description)
-        grid.attach(expander, 1, 1, 2, 1)
+        description_module = DescriptionModule('Amass is a powerful cybersecurity tool used for network mapping and assets discovery.')
+        grid.attach(description_module.get_module(), 1, 1, 2, 1)
 
         license = Gtk.Label()
         license.set_markup('License: GPL-3.0+')
@@ -161,12 +176,11 @@ class AmassPage(Page):
         else:
             dialog.destroy()
 
-    def share_snap(self, button):
-        webbrowser.open('https://snapcraft.io/amass')
-
     def user_manual(self, button):
-        webbrowser.open('https://github.com/OWASP/Amass/blob/master/doc/user_guide.md')
+        webbrowser.open_new_tab("https://github.com/OWASP/Amass/blob/master/doc/user_guide.md")
+
+    def share_snap(self, button):
+        webbrowser.open_new_tab("https://snapcraft.io/amass")
 
     def about(self, button):
-        webbrowser.open('https://owasp.org/www-project-amass/')
-
+        webbrowser.open_new_tab("https://github.com/OWASP/Amass")
