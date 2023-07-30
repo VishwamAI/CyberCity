@@ -10,10 +10,10 @@ class FeedbackPage(Page):
         self.append(self.grid)
 
         tools = {
-            "Email": "✉️",
-            "LinkedIn": "🔗",
-            "Facebook": "📘",
-            "Youtube": "📺"
+            "Email": "✉️ Email",
+            "LinkedIn": "🔗 LinkedIn",
+            "Facebook": "📘 Facebook",
+            "Youtube": "📺 Youtube"
         }
         for i, tool in enumerate(tools):
             btn = Gtk.Button(label=tools[tool])

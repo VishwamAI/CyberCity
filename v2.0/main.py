@@ -2,18 +2,29 @@
 import sys
 import gi
 gi.require_version('Gtk', '4.0')
-from gi.repository import Gtk, Gdk
+gi.require_version('Notify','0.7')
+from gi.repository import Gtk, Gdk,Gtk
 
 # First page
 from CyberToolsPage import CyberToolsPage
 from TrainingPlatformsPage import TrainingPlatformsPage
 from CTFPlatformsPage import CTFPlatformsPage
+from JobCalendarsPage import JobCalendarsPage
+from ResearchDiscoveryPage import ResearchDiscoveryPage
+from CyberFraudsPage import CyberFraudsPage
+from StudentDevelopmentPage import StudentDevelopmentPage
+from EventsEntertainmentsPage import EventsEntertainmentsPage
 from FeedbackPage import FeedbackPage
+
 
 #second Page
 from LinuxPage import LinuxPage
+from WebApplicationsPage import WebApplicationsPage
+from MacOSPage import MacOSPage
+from WindowsPage import WindowsPage
+from MobileApplicationsPage import MobileApplicationsPage
 
-# third page
+# Linux page
 from InformationGatheringPage import InformationGatheringPage
 from VulnerabilityAnalysisPage import VulnerabilityAnalysisPage
 from WebApplicationPage import WebApplicationPage
@@ -29,6 +40,13 @@ from ReportingToolsPage import ReportingToolsPage
 from SocialEngineeringToolkitPage import SocialEngineeringToolkitPage
 from SystemServicesPage import SystemServicesPage
 
+# WebTools page
+from EncodeDecodePage import EncodeDecodePage
+from ExploitsPage import ExploitsPage
+from WebScannersPage import WebScannersPage
+from DataAnalysisPage import DataAnalysisPage
+from NetworkUtilitiesPage import NetworkUtilitiesPage
+from CyberSecurityPage import CyberSecurityPage
 #InformationGatheringPage Download pages
 from AmassPage import AmassPage
 from DmitryPage import DmitryPage
@@ -44,35 +62,6 @@ from GVMPage import GVMPage
 from LynisPage import LynisPage
 from NiktoPage import NiktoPage
 from Page import Page
-
-# main.py
-import sys
-import gi
-gi.require_version('Gtk', '4.0')
-from gi.repository import Gtk, Gdk
-
-# First page
-from CyberToolsPage import CyberToolsPage
-from FeedbackPage import FeedbackPage
-
-#second Page
-from LinuxPage import LinuxPage
-
-# third page
-from InformationGatheringPage import InformationGatheringPage
-from VulnerabilityAnalysisPage import VulnerabilityAnalysisPage
-from WebApplicationPage import WebApplicationPage
-from DataBaseAssessmentPage import DataBaseAssessmentPage
-from PasswordAttacksPage import PasswordAttacksPage
-from WirelessAttacksPage import WirelessAttacksPage
-from ReverseEngineeringPage import ReverseEngineeringPage
-from ExplorationToolsPage import ExplorationToolsPage
-from SniffingToolsPage import SniffingToolsPage
-from PostExploitationPage import PostExploitationPage
-from ForensicsPage import ForensicsPage
-from ReportingToolsPage import ReportingToolsPage
-from SocialEngineeringToolkitPage import SocialEngineeringToolkitPage
-from SystemServicesPage import SystemServicesPage
 
 #InformationGatheringPage Download pages
 from AmassPage import AmassPage
@@ -132,6 +121,8 @@ class MainWindow(Gtk.ApplicationWindow):
             btn.set_vexpand(True)
             btn.set_halign(Gtk.Align.CENTER)
             btn.set_valign(Gtk.Align.CENTER)
+            
+
 
 
     def open_page(self, button, page_name):
@@ -169,7 +160,21 @@ class MainWindow(Gtk.ApplicationWindow):
                 "Nikto": NiktoPage,
                 "Training Platforms": TrainingPlatformsPage, 
                 "CTF Platforms":CTFPlatformsPage,
-                
+                "Job Calendars": JobCalendarsPage,
+                "Research\n & Discovery":ResearchDiscoveryPage,
+                "Cyber Frauds": CyberFraudsPage,
+                "Student\nDevelopment Kit": StudentDevelopmentPage,
+                "Events\n & Entertainments": EventsEntertainmentsPage,
+                "MacOS":MacOSPage,
+                "Windows":WindowsPage,
+                "MobileApplications":MobileApplicationsPage,
+                "WebApplications":WebApplicationsPage,
+                "EncodeDecode":EncodeDecodePage,
+                "Exploits":ExploitsPage,
+                "WebScanners":WebScannersPage,
+                "DataAnalysis":DataAnalysisPage,
+                "NetworkUtilities":NetworkUtilitiesPage,
+                "CyberSecurity":CyberSecurityPage,
             }
             if page_name in page_classes:
                 page = page_classes[page_name]("Go back from " + self.current_page)
@@ -184,7 +189,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.current_page = page_name
         self.stack.set_visible_child_name(page_name)
 
-class MyApp(Gtk.Application):
+class  CyberCity(Gtk.Application):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.connect('activate',self.on_activate)
@@ -202,5 +207,5 @@ class MyApp(Gtk.Application):
         )
 
 if __name__ == "__main__":
-    app = MyApp(application_id='org.PenetrationApp.GtkApplication')
+    app = CyberCity(application_id='org.PenetrationApp.GtkApplication')
     app.run(sys.argv)

@@ -41,14 +41,10 @@ label {
     padding: 20px;
 }
 
-label {
-    font-size: 18px;
-    color: #ffffff;
-}
-
 button.go-back-button {
     color: red;
 }
+
 /* Add color to the title */
 label#title {
     color: #4A90E2; /* Change to your preferred color */
@@ -57,4 +53,8 @@ label#title {
 /* Change the color of the text inside the expander when it's expanded */
 expander label {
     color: #7B7B7B; /* Change to your preferred color */
+}
+
+.frame-class {
+    margin: 10px;
 }

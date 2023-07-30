@@ -1,7 +1,7 @@
 from gi.repository import Gtk
 from Page import Page
 
-class CyberToolsPage(Page):
+class WebApplicationsPage(Page):
     def __init__(self, back_label):
         super().__init__(back_label)
 
@@ -9,11 +9,12 @@ class CyberToolsPage(Page):
         self.append(self.grid)
 
         tools = {
-            "🐧 Linux": "Linux",
-            "🌐 Web Applications": "WebApplications",
-            "🍎 MacOS": "MacOS",
-            "🪟 Windows": "Windows",
-            "📱 Mobile Applications": "MobileApplications"
+            "🔀 E&D": "EncodeDecode",
+            "💣 Exploits": "Exploits",
+            "🕸️ Web Scanners": "WebScanners",
+            "📊 Data Analysis": "DataAnalysis",
+            "🌐 Network Utilities": "NetworkUtilities",
+            "🔒 Cyber Security": "CyberSecurity"
         }
 
         for i, (tool, toolPage) in enumerate(tools.items()):
