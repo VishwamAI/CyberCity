@@ -1,7 +1,8 @@
 from gi.repository import Gtk
+import webbrowser
 from Page import Page
 
-class CyberToolsPage(Page):
+class HardwareToolsPage(Page):
     def __init__(self, back_label):
         super().__init__(back_label)
 
@@ -9,18 +10,18 @@ class CyberToolsPage(Page):
         self.append(self.grid)
 
         tools = {
-            "🐧 Linux": "Linux",
-            "🌐 Web Applications": "WebApplications",
-            "🍎 MacOS": "MacOS",
-            "🪟 Windows": "Windows",
-            "📱 Mobile Applications": "MobileApplications",
-            "🛠️ Hardware Tools":"HardwareTools"
+            "Hak5": "https://hak5.org/",
+            "Pine64": "https://www.pine64.org/",
+            "Raspberry Pi": "https://www.raspberrypi.org/",
+            "Pwnie Express": "https://www.pwnieexpress.com/",
+            "Think Penguin": "https://www.thinkpenguin.com/",
+            "SparkFun Electronics": "https://www.sparkfun.com/"
         }
 
-        for i, (tool, toolPage) in enumerate(tools.items()):
+        for i, tool in enumerate(tools):
             btn = Gtk.Button(label=tool)
             btn.get_style_context().add_class("circular")
-            btn.connect("clicked", self.open_page, toolPage)
+            btn.connect("clicked", self.open_tool, tools[tool])
             self.grid.attach(btn, i % 3, i // 3, 1, 1)
             btn.set_size_request(200, 200)
 
@@ -29,7 +30,6 @@ class CyberToolsPage(Page):
             btn.set_halign(Gtk.Align.CENTER)
             btn.set_valign(Gtk.Align.CENTER)
 
-    def open_page(self, button, page_class):
+    def open_tool(self, button, tool_url):
         button.get_style_context().add_class('clicked')
-        main_window = self.get_root()
-        main_window.open_page(button, page_class)
+        webbrowser.open(tool_url)

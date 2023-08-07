@@ -13,7 +13,7 @@ class FeedbackPage(Page):
             "Email": "✉️ Email",
             "LinkedIn": "🔗 LinkedIn",
             "Facebook": "📘 Facebook",
-            "Youtube": "📺 Youtube"
+            "Youtube": "▶️ Youtube"
         }
         for i, tool in enumerate(tools):
             btn = Gtk.Button(label=tools[tool])
@@ -49,4 +49,4 @@ class FeedbackPage(Page):
         webbrowser.open("https://www.facebook.com/Exploit0xffffff")
 
     def open_youtube(self, button):
-        webbrowser.open("https://www.youtube.com/channel/UC4JXxQqQqXK4QHhQgqEeYjQ")
+        webbrowser.open("https://youtube.com/@exploit0xffff")
