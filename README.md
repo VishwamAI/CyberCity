@@ -25,7 +25,7 @@ sudo apt remove penetration-app
 ```bash
 git clone https://github.com/Exploit0xfffff/CyberCity
 cd CyberCity/v2.0
-python3 main.py
+python3 CyberCity.py
 ```
 ## Description
 
