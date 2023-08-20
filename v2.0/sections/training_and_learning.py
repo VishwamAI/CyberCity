@@ -7,7 +7,7 @@ def create_content_button(content_name):
     button = Gtk.Button(label=content_name)
     return button
 
-def add_training_and_learning(content_box, section_name="Training & Learning"):
+def add_training_and_learning_content(content_box, section_name="Training & Learning"):
     """Populates the provided container with labeled buttons related to training and learning."""
     
     # Create a label with the section name
