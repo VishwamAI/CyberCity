@@ -1,6 +1,8 @@
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, GdkPixbuf, Gdk
+from sections import home,training_and_learning, research_and_discovery, cyber_frauds, events_and_entertainments,cybertools
+
 class CyberCity(Gtk.Window):
     
     def __init__(self):
@@ -45,8 +47,9 @@ class CyberCity(Gtk.Window):
             ("Job Calendars", "img/Jobcalenders.png")
         ]
 
-        ICON_WIDTH = 124
-        ICON_HEIGHT = 45
+        ICON_WIDTH = 30
+        ICON_HEIGHT = 30
+        BUTTON_WIDTH = 40  # This will define the width of the button
 
         # Create a vertical box for the hamburger button and the sidebar
         self.hamburger_sidebar_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
@@ -73,8 +76,11 @@ class CyberCity(Gtk.Window):
         # Iterate over sections to add each to the sidebar with its icon
         for section, icon_path in sections:
             icon_button = Gtk.Button()
+            # Set the width of the button using CSS
+            icon_button.get_style_context().add_class("icon-button")
             pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(icon_path, ICON_WIDTH, ICON_HEIGHT)
             icon = Gtk.Image.new_from_pixbuf(pixbuf)
+            
 
             icon_button.add(icon)
             icon_button.connect("clicked", self.on_section_clicked, section)
@@ -195,241 +201,38 @@ class CyberCity(Gtk.Window):
     def on_section_clicked(self, button, section_name):
         self.clear_content_box()
 
-        if section_name == "Home":
-            dashboard_label = Gtk.Label()
-            dashboard_label.set_markup("<span size='x-large' weight='bold'>Dashboard</span>")
-            self.content_box.pack_start(dashboard_label, False, False, 10)
+        # Define content functions
+        content_functions = {
+            "Home": lambda box, name="Home": home.add_home_content(box, name),
+            "Cyber Tools": lambda box: cybertools.add_cybertools_content(box),
+            "Training & Learning": lambda box, name="Training & Learning": training_and_learning.add_training_and_learning(box, name),
+            "Research & Discovery": lambda box: research_and_discovery.add_research_and_discovery_content(box),
+            "Cyber Frauds": lambda box: cyber_frauds.add_cyber_frauds_content(box),
+            "Events & Entertainments": lambda box: events_and_entertainments.add_events_and_entertainments_content(box)
+        }
 
-        elif section_name == "Cyber Tools":
-            self.add_cyber_tools_content()                
-        elif section_name == "Training & Learning":
-            label = Gtk.Label()
-            label.set_markup("<span size='x-large' weight='bold'>Training &amp; Learning</span>")
-            vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-            vbox.set_valign(Gtk.Align.START)
-            vbox.set_halign(Gtk.Align.CENTER)
-            vbox.set_vexpand(False)
-
-            vbox.pack_start(label, False, False, 10)
-            hbox1 = Gtk.Box(spacing=10)
-            hbox1.pack_start(self.create_content_button("Training Platforms"), True, True, 0)
-            hbox1.pack_start(self.create_content_button("CTF Platforms"), True, True, 0)
-            
-            vbox.pack_start(hbox1, True, True, 10)
-            hbox2 = Gtk.Box(spacing=10)
-            hbox2.pack_start(self.create_content_button("YouTube Channels"), True, True, 0)
-            hbox2.pack_start(self.create_content_button("Courses"), True, True, 0)
-
-            vbox.pack_start(hbox2, True, True, 10)
-            vbox.pack_start(self.create_content_button("Student Development Kit"), True, True, 10)
-            
-            self.content_box.pack_start(vbox, True, True, 0)
-            self.content_box.show_all()
-            
-        elif section_name == "Research & Discovery":
-            self.add_research_and_discovery_content()
-            
-        elif section_name == "Cyber Frauds":
-            self.add_cyber_frauds_content()
-            
-        elif section_name == "Events & Entertainments":
-            self.add_events_and_entertainments_content()    
+        # If the section_name exists in content_functions, then execute its content
+        if section_name in content_functions:
+            content_function = content_functions[section_name]
+            content_function(self.content_box)  # Call the content function with the content box
             
         else:
             label = Gtk.Label(label=f"This is the {section_name} section.")
             self.content_box.pack_start(label, True, True, 0)
 
         self.content_box.show_all()
-    #Cyber Tools content
-    def add_cyber_tools_content(self):
-        label = Gtk.Label()
-        label.set_markup("<span size='x-large' weight='bold'>CyberTools</span>")
-
-        # Box to hold the label and buttons, align it to the center
-        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-        vbox.set_valign(Gtk.Align.START)  # Align towards the top
-        vbox.set_halign(Gtk.Align.CENTER)  # Center horizontally
-        vbox.set_vexpand(False)  # Don't expand vertically
-
-        vbox.pack_start(label, False, False, 10)
-
-        # Box to hold the first row of buttons
-        hbox1 = Gtk.Box(spacing=10)
-        hbox1.pack_start(self.create_content_button("Linux"), True, True, 0)
-        hbox1.pack_start(self.create_content_button("WebBrowser"), True, True, 0)
-
-        vbox.pack_start(hbox1, True, True, 10)
-
-        # The last button for "Hardware"
-        vbox.pack_start(self.create_content_button("Hardware"), True, True, 10)
-
-        self.content_box.pack_start(vbox, True, True, 0)
-        self.content_box.show_all()
-    # Research section
-    def add_research_and_discovery_content(self):
-        label = Gtk.Label()
-        label.set_markup("<span size='x-large' weight='bold'>Research &amp; Discovery</span>")
-
-        # Box to hold the label and buttons, align it to the center
-        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-        vbox.set_valign(Gtk.Align.START)  # Align towards the top
-        vbox.set_halign(Gtk.Align.CENTER)  # Center horizontally
-        vbox.set_vexpand(False)  # Don't expand vertically
-
-        vbox.pack_start(label, False, False, 10)
-
-        # Box to hold the first row of buttons
-        hbox1 = Gtk.Box(spacing=10)
-        hbox1.pack_start(self.create_content_button("Academic Journals"), True, True, 0)
-        hbox1.pack_start(self.create_content_button("Whitepapers"), True, True, 0)
-
-        vbox.pack_start(hbox1, True, True, 10)
-
-        # Box to hold the second row of buttons
-        hbox2 = Gtk.Box(spacing=10)
-        hbox2.pack_start(self.create_content_button("Industry Reports"), True, True, 0)
-        hbox2.pack_start(self.create_content_button("Collaborative Projects"), True, True, 0)
-
-        vbox.pack_start(hbox2, True, True, 10)
-
-        # Box to hold the third row of buttons
-        hbox3 = Gtk.Box(spacing=10)
-        hbox3.pack_start(self.create_content_button("Open Source Repositories"), True, True, 0)
-        hbox3.pack_start(self.create_content_button("Latest Innovations"), True, True, 0)
-
-        vbox.pack_start(hbox3, True, True, 10)
-
-        # Box to hold the fourth row of buttons
-        hbox4 = Gtk.Box(spacing=10)
-        hbox4.pack_start(self.create_content_button("Thought Leadership"), True, True, 0)
-        hbox4.pack_start(self.create_content_button("Organizations"), True, True, 0)
-
-        vbox.pack_start(hbox4, True, True, 10)
-
-        self.content_box.pack_start(vbox, True, True, 0)
-        self.content_box.show_all()
-    # Frauds section
-    def add_cyber_frauds_content(self):
-        label = Gtk.Label()
-        label.set_markup("<span size='x-large' weight='bold'>Cyber Frauds &amp; Emerging Threats</span>")
-
-        # Box to hold the label and buttons, align it to the center
-        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-        vbox.set_valign(Gtk.Align.START)  # Align towards the top
-        vbox.set_halign(Gtk.Align.CENTER)  # Center horizontally
-        vbox.set_vexpand(False)  # Don't expand vertically
-
-        vbox.pack_start(label, False, False, 10)
-
-        # Box to hold the first row of buttons
-        hbox1 = Gtk.Box(spacing=10)
-        hbox1.pack_start(self.create_content_button("Case Studies"), True, True, 0)
-        hbox1.pack_start(self.create_content_button("Recent Attacks"), True, True, 0)
-        hbox1.pack_start(self.create_content_button("Mitigation Techniques"), True, True, 0)
-        
-        vbox.pack_start(hbox1, True, True, 10)
-
-        # Box to hold the second row of buttons
-        hbox2 = Gtk.Box(spacing=10)
-        hbox2.pack_start(self.create_content_button("Threat Intelligence"), True, True, 0)
-        hbox2.pack_start(self.create_content_button("Digital Forensics"), True, True, 0)
-
-        vbox.pack_start(hbox2, True, True, 10)
-
-        self.content_box.pack_start(vbox, True, True, 0)
-        self.content_box.show_all()
-    #Events& entratainements section
-    def add_events_and_entertainments_content(self):
-        label = Gtk.Label()
-        label.set_markup("<span size='x-large' weight='bold'>Events &amp; Entertainments</span>")
-
-        # Box to hold the label and buttons, align it to the center
-        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-        vbox.set_valign(Gtk.Align.START)  # Align towards the top
-        vbox.set_halign(Gtk.Align.CENTER)  # Center horizontally
-        vbox.set_vexpand(False)  # Don't expand vertically
-
-        vbox.pack_start(label, False, False, 10)
-
-        # Box to hold the first row of buttons
-        hbox1 = Gtk.Box(spacing=10)
-        hbox1.pack_start(self.create_content_button("Podcasts"), True, True, 0)
-        hbox1.pack_start(self.create_content_button("Blogs"), True, True, 0)
-        
-        vbox.pack_start(hbox1, True, True, 10)
-
-        # Box to hold the second row of buttons
-        hbox2 = Gtk.Box(spacing=10)
-        hbox2.pack_start(self.create_content_button("Global Events"), True, True, 0)
-        hbox2.pack_start(self.create_content_button("Workshops"), True, True, 0)
-
-        vbox.pack_start(hbox2, True, True, 10)
-
-        # Box to hold the third row of buttons
-        hbox3 = Gtk.Box(spacing=10)
-        hbox3.pack_start(self.create_content_button("Webinars"), True, True, 0)
-        hbox3.pack_start(self.create_content_button("Competitions"), True, True, 0)
-
-        vbox.pack_start(hbox3, True, True, 10)
-
-        self.content_box.pack_start(vbox, True, True, 0)
-        self.content_box.show_all()
-
-    def create_content_button(self, content_name):
-        # hand cursor on content button
-        button = Gtk.Button(label=content_name)
-        button.connect("clicked", self.on_content_button_clicked, content_name)
-        button.connect('enter-notify-event', self.on_icon_button_hover)
-        button.connect('leave-notify-event', self.on_icon_button_leave)
-
-        # Set a uniform button size
-        button_width = 150
-        button_height = 70
-        button.set_size_request(button_width, button_height)
-
-        # Optionally, limit the label length (if the content_name is too long)
-        if len(content_name) > 20:
-            button.set_label(content_name[:17] + "...")
-
-        return button
+    
 
 if __name__ == "__main__":
-    # Creating a style provider
+    # Load CSS
     screen = Gdk.Screen.get_default()
     provider = Gtk.CssProvider()
     style_context = Gtk.StyleContext()
     style_context.add_provider_for_screen(screen, provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
-    # Adding CSS for the dark and light modes
-    css = b"""
-    .dark-mode {
-        background-color: #2E2E2E;
-        color: #FFF;
-    }
-    
-    .light-mode {
-        background-color: #FFF;
-        color: #2E2E2E;
-    }
-
-    button {
-        border: 1px solid #2E2E2E;
-        border-radius: 4px;
-        padding: 5px 10px;
-    }
-
-    .dark-mode button {
-        background-color: #555;
-        color: #FFF;
-    }
-
-    .light-mode button {
-        background-color: #FFF;
-        color: #2E2E2E;
-    }
-    """
-    
-    provider.load_from_data(css)
+    with open("styles/dark_light.css", "rb") as f:
+        css = f.read()
+        provider.load_from_data(css)
 
     window = CyberCity()
     window.connect("destroy", Gtk.main_quit)
