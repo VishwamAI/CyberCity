@@ -1,7 +1,8 @@
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, GdkPixbuf, Gdk
-from sections import home,training_and_learning, research_and_discovery, cyber_frauds, events_and_entertainments,cybertools
+from sections import home,training_and_learning, research_and_discovery, cyber_frauds, events_and_entertainments
+import sections.cybertools as cybertools
 
 class CyberCity(Gtk.Window):
     
