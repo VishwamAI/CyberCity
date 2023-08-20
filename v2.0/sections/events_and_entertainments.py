@@ -7,36 +7,38 @@ def create_content_button(content_name):
     button = Gtk.Button(label=content_name)
     return button
 
-def add_training_and_learning(content_box, section_name="Training & Learning"):
-    """Populates the provided container with labeled buttons related to training and learning."""
-    
-    # Create a label with the section name
+def add_events_and_entertainments_content(content_box, section_name="Events & Entertainments"):
     label = Gtk.Label()
-    label.set_markup(f"<span size='x-large' weight='bold'>Training &amp; Learning</span>")
-    
-    # Vertical box to hold the label and button rows
+    label.set_markup("<span size='x-large' weight='bold'>Events &amp; Entertainments</span>")
+
+    # Box to hold the label and buttons, align it to the center
     vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-    vbox.set_valign(Gtk.Align.START)
-    vbox.set_halign(Gtk.Align.CENTER)
-    vbox.set_vexpand(False)
+    vbox.set_valign(Gtk.Align.START)  # Align towards the top
+    vbox.set_halign(Gtk.Align.CENTER)  # Center horizontally
+    vbox.set_vexpand(False)  # Don't expand vertically
 
     vbox.pack_start(label, False, False, 10)
-    
-    # First row of buttons: "Training Platforms" and "CTF Platforms"
+
+    # Box to hold the first row of buttons
     hbox1 = Gtk.Box(spacing=10)
-    hbox1.pack_start(create_content_button("Training Platforms"), True, True, 0)
-    hbox1.pack_start(create_content_button("CTF Platforms"), True, True, 0)
+    hbox1.pack_start(create_content_button("Podcasts"), True, True, 0)
+    hbox1.pack_start(create_content_button("Blogs"), True, True, 0)
+
     vbox.pack_start(hbox1, True, True, 10)
 
-    # Second row of buttons: "YouTube Channels" and "Courses"
+    # Box to hold the second row of buttons
     hbox2 = Gtk.Box(spacing=10)
-    hbox2.pack_start(create_content_button("YouTube Channels"), True, True, 0)
-    hbox2.pack_start(create_content_button("Courses"), True, True, 0)
+    hbox2.pack_start(create_content_button("Global Events"), True, True, 0)
+    hbox2.pack_start(create_content_button("Workshops"), True, True, 0)
+
     vbox.pack_start(hbox2, True, True, 10)
-    
-    # A button for "Student Development Kit"
-    vbox.pack_start(create_content_button("Student Development Kit"), True, True, 10)
-    
-    # Add the vbox to the content box and display all widgets
+
+    # Box to hold the third row of buttons
+    hbox3 = Gtk.Box(spacing=10)
+    hbox3.pack_start(create_content_button("Webinars"), True, True, 0)
+    hbox3.pack_start(create_content_button("Competitions"), True, True, 0)
+
+    vbox.pack_start(hbox3, True, True, 10)
+
     content_box.pack_start(vbox, True, True, 0)
     content_box.show_all()

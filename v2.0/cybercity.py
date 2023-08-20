@@ -203,14 +203,13 @@ class CyberCity(Gtk.Window):
 
         # Define content functions
         content_functions = {
-            "Home": lambda box, name="Home": home.add_home_content(box, name),
-            "Cyber Tools": lambda box: cybertools.add_cybertools_content(box),
-            "Training & Learning": lambda box, name="Training & Learning": training_and_learning.add_training_and_learning(box, name),
-            "Research & Discovery": lambda box: research_and_discovery.add_research_and_discovery_content(box),
-            "Cyber Frauds": lambda box: cyber_frauds.add_cyber_frauds_content(box),
-            "Events & Entertainments": lambda box: events_and_entertainments.add_events_and_entertainments_content(box)
+            "Home": home.add_home_content,
+            "Cyber Tools": cybertools.add_cybertools_content,
+            "Training & Learning": training_and_learning.add_training_and_learning_content,
+            "Research & Discovery": research_and_discovery.add_research_and_discovery_content,
+            "Cyber Frauds": cyber_frauds.add_cyber_frauds_content,
+            "Events & Entertainments": events_and_entertainments.add_events_and_entertainments_content
         }
-
         # If the section_name exists in content_functions, then execute its content
         if section_name in content_functions:
             content_function = content_functions[section_name]
