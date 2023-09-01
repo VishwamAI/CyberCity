@@ -49,6 +49,9 @@ python3 cybercity.py
 
 - **v2.0 Beta (Coming Soon)**: Focus on the development of new applications while maintaining existing tools like BurpSuite.
 
+![image](https://github.com/Exploit0xfffff/CyberCity/assets/81065703/c26d7054-9cb5-4b7f-8bdb-49478f62d12f)
+
+it is coming a major things happend in this 
 - **v2.5.0 Beetroot**: Major UI improvements and further advancements in development.
 
 We strive to provide a modern and user-friendly experience with regular updates based on user feedback and the ever-changing cybersecurity landscape. We are excited to have you as part of our community and look forward to delivering an exceptional cybersecurity toolkit.
