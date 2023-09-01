@@ -1,11 +1,48 @@
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk
+from gi.repository import Gtk,Gdk
 
-def create_content_button(content_name):
-    """Creates a button widget with the provided content name."""
+
+stack = Gtk.Stack()
+navigation_history = []
+
+def create_content_button(content_name, callback=None):
     button = Gtk.Button(label=content_name)
+    button.set_relief(Gtk.ReliefStyle.NONE)
+    button.connect("enter-notify-event", lambda widget, event: widget.get_window().set_cursor(Gdk.Cursor(Gdk.CursorType.HAND2)))
+    button.connect("leave-notify-event", lambda widget, event: widget.get_window().set_cursor(None))
+    if callback:
+        button.connect("clicked", callback)
     return button
+
+def go_back(button):
+    last_visited_page = navigation_history.pop() if navigation_history else "cybertools_main"
+    stack.set_visible_child_name(last_visited_page)
+    button.connect("enter-notify-event", lambda widget, event: widget.get_window().set_cursor(Gdk.Cursor(Gdk.CursorType.HAND2)))
+    button.connect("leave-notify-event", lambda widget, event: widget.get_window().set_cursor(None))
+
+def navigate_to_page(button, page_name):
+    current_page = stack.get_visible_child_name()
+    if current_page != page_name:
+        navigation_history.append(current_page)
+        stack.set_visible_child_name(page_name)
+
+def create_top_bar():
+    hbox = Gtk.Box(spacing=10)
+    go_back_button = Gtk.Button()
+    icon = Gtk.Image.new_from_icon_name("go-previous-symbolic", Gtk.IconSize.MENU)
+    go_back_button.add(icon)
+    go_back_button.connect("clicked", go_back)
+    hbox.pack_start(go_back_button, False, False, 10)
+    return hbox
+
+def add_page_to_stack(page_name, title):
+    if not stack.get_child_by_name(page_name): 
+            vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+            vbox.pack_start(create_top_bar(), False, False, 10)
+            label = Gtk.Label(label=f"Welcome to {title} Page")
+            vbox.pack_start(label, True, True, 10)
+            stack.add_titled(vbox, page_name, title)
 
 def add_training_and_learning_content(content_box, section_name="Training & Learning"):
     """Populates the provided container with labeled buttons related to training and learning."""

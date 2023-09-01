@@ -121,8 +121,11 @@ def add_webbrowsers_page():
     hbox_top = Gtk.Box(spacing=10)
     hbox_top.set_homogeneous(True)
     hbox_top.set_halign(Gtk.Align.CENTER)
-    for index, (tool_name, page_name) in enumerate(list(webbrowsers.items())[:2]):
-        button = create_content_button(tool_name, lambda button, pname=page_name: navigate_to_page(button, pname))
+
+    for tool_name, page_name in list(webbrowsers.items())[:2]:
+        def button_callback(button, page_name=page_name):
+            navigate_to_page(button, page_name)
+        button = create_content_button(tool_name, button_callback)
         button.set_size_request(100, 100)
         hbox_top.pack_start(button, True, True, 0)
 
@@ -131,13 +134,15 @@ def add_webbrowsers_page():
     hbox_bottom = Gtk.Box(spacing=10)
     hbox_bottom.set_homogeneous(True)
     hbox_bottom.set_halign(Gtk.Align.CENTER)
-    for index, (tool_name, page_name) in enumerate(list(webbrowsers.items())[2:]):
-        button = create_content_button(tool_name, lambda button, pname=page_name: navigate_to_page(button, pname))
+
+    for tool_name, page_name in list(webbrowsers.items())[2:]:
+        def button_callback(button, page_name=page_name):
+            navigate_to_page(button, page_name)
+        button = create_content_button(tool_name, button_callback)
         button.set_size_request(100, 100)
         hbox_bottom.pack_start(button, True, True, 0)
 
     vbox.pack_start(hbox_bottom, False, False, 10)
-
     stack.add_titled(vbox, "webbrowsers", "Web Browser")
 
 # Hardware Tools page
