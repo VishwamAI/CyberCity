@@ -1,15 +1,14 @@
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, GdkPixbuf, Gdk
-from sections import home,training_and_learning, research_and_discovery, cyber_frauds, events_and_entertainments
+from sections import home,training_and_learning, research_and_discovery, cyber_frauds, events_and_entertainments,goback
 import sections.cybertools as cybertools
-
 class CyberCity(Gtk.Window):
     
     def __init__(self):
         super().__init__(title="Cyber City")
         self.history_stack = []
-        self.set_default_size(800, 600)
+        self.set_default_size(900, 700)
         self.current_mode = "light"
 
         # Main horizontal box for layout
@@ -59,7 +58,8 @@ class CyberCity(Gtk.Window):
         self.hamburger_button = Gtk.ToggleButton()
         self.hamburger_button.set_active(False)  # Set initial state as not toggled
         self.hamburger_button.connect("toggled", self.on_hamburger_toggled)
-        
+        self.hamburger_button.set_margin_top(10)  # Add 10 pixels of space at the top
+                
         # Pack the hamburger button into the hamburger_sidebar_box
         self.hamburger_sidebar_box.pack_start(self.hamburger_button, False, False, 0)
 

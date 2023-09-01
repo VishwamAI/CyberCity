@@ -1,3 +1,6 @@
+
+
+
 /* Base Styles */
 .label {
     font-weight: bold;
@@ -7,10 +10,6 @@
 /* Dark Mode */
 .dark-mode {
     background-color: #2E2E2E;
-    color: #FFF;
-}
-
-.dark-mode .label {
     color: #FFF;
 }
 
@@ -26,10 +25,6 @@
     color: #2E2E2E;
 }
 
-.light-mode .label {
-    color: #2E2E2E;
-}
-
 .light-mode button {
     background-color: #FFF;
     color: #2E2E2E;
@@ -42,18 +37,22 @@ button {
     padding: 10px 20px;
     transition: background-color 0.3s, color 0.3s;
     font-size: 16px;
-    /* min-width might not be supported in GTK's CSS. Be cautious. */
-    /* min-width: 150px; */
+    background-color: #2E2E2E; /* Dark background */
+    color: #FFFFFF; /* White text */
+}
+
+button img {
+    margin-right: 10px; /* Space between the icon and the text */
 }
 
 button:hover {
-    background-color: #FFD700;
-    color: #2E2E2E;
+    background-color: #404040; /* Slightly lighter dark color on hover */
 }
 
 /* Smaller Icon Buttons */
 .icon-button {
-    padding: 5px 10px;  /* Smaller padding for icon buttons */
-    font-size: 14px;    /* Smaller font size for icon buttons */
-    /* Removed width constraints specific for icon buttons due to GTK compatibility */
+    padding: 2px;  /* Reduced padding to allow the icon to fill more space */
+    font-size: 14px;
+    border-width: 0;  /* Remove any default borders */
+    background-color: transparent;  /* Ensure there's no default background */
 }
