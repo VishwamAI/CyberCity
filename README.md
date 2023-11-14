@@ -36,7 +36,7 @@ python3 cybercity.py
 - **Version 2.5.0 Beetroot**: This update will bring significant UI improvements and further advancements in development.
 
 ## Development
-
+### v1.0 Development 
 | Folder            | Description |
 | ----------------- | ----------- |
 | src               | Contains the main source code |
