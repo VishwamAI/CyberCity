@@ -5,10 +5,8 @@
 | Distribution | Format | Source |
 | ------------ | ------ | ------ |
 | Ubuntu       | deb    | [Download PenetrationAppv1.0.deb](https://github.com/Exploit0xfffff/PenetrationApp/releases/download/v1.0.0/PenetrationAppv1.0.deb) |
-| Windows      | exe    | coming soon|
-| All Linux Versions | snap | coming soon |
-| MacOS| app | coming soon|
-| Developer    | clone  | `git clone https://github.com/Exploit0xfffff/CyberCity` |
+| becoming webbased project !......|
+
 
 ### Ubuntu Installation
 
@@ -24,10 +22,12 @@ sudo apt remove penetration-app
 
 ## Developers
 
+before installation all should install the node -npm 
+
 ```bash
 git clone https://github.com/Exploit0xfffff/CyberCity
-cd CyberCity/v2.0
-python3 cybercity.py
+cd experiment/cybercity
+npm start
 ```
 ### Future Updates
 

@@ -1,0 +1,37 @@
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--sidebar-background-color);
+  transition: all 0.3s ease;
+  z-index: 1000; /* Ensure sidebar is above other content */
+}
+
+/* Style icons in the sidebar */
+.sidebar .icon {
+  margin-right: 10px; /* Adds spacing between the icon and the text */
+}
+
+/* Style the sidebar links */
+.sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: var(--sidebar-link-color); /* Default icon color */
+  text-decoration: none;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+/* Change background and text color on hover and active state */
+.sidebar a:hover, .sidebar a.active {
+  background-color: var(--sidebar-link-hover-background-color); /* Color when item is hovered or active */
+  color: var(--sidebar-link-hover-color); /* Text and icon color when item is hovered or active */
+}
+
+/* Specific style for active icons to change color */
+.sidebar a.active .icon {
+  color: var(--sidebar-active-icon-color);
+}

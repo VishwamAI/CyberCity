@@ -1,0 +1,143 @@
+/* Base Variables for Light Theme */
+:root {
+  --sidebar-width: 250px;
+  --sidebar-background-color: #fff;
+  --sidebar-text-color: #030303;
+  --sidebar-icon-color: #606060;
+  --sidebar-link-hover-background-color: #e7e7e7;
+  --sidebar-active-link-background-color: #ff0000;
+  --sidebar-active-link-color: #fff;
+  --sidebar-border-color: #f0f0f0;
+  --sidebar-toggle-background-color: #e7e7e7;
+  --sidebar-toggle-color: #000;
+  --sidebar-footer-height: 60px; /* Height of the footer */
+}
+
+/* Dark Theme Variables */
+.dark-theme {
+  --sidebar-background-color: #202020;
+  --sidebar-text-color: #fff;
+  --sidebar-icon-color: #909090;
+  --sidebar-link-hover-background-color: #383838;
+  --sidebar-active-link-background-color: #ff0000;
+  --sidebar-active-link-color: #fff;
+  --sidebar-border-color: #373737;
+  --sidebar-toggle-background-color: #666;
+  --sidebar-toggle-color: #fff;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: var(--sidebar-background-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligns items to the top */
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  padding-top: 1rem;
+}
+
+.sidebar.closed {
+  transform: translateX(-100%);
+  visibility: hidden;
+}
+
+.sidebar a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: var(--sidebar-text-color);
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+  background-color: var(--sidebar-active-link-background-color);
+  color: var(--sidebar-active-link-color);
+}
+
+.sidebar .icon {
+  margin-right: 10px;
+  color: var(--sidebar-icon-color);
+}
+
+/* Toggle Theme Button style */
+.theme-toggle {
+  margin-top: auto; /* Pushes the toggle to the bottom */
+  padding: 10px 0;
+  background-color: var(--sidebar-toggle-background-color);
+  color: var(--sidebar-toggle-color);
+  border-top: 1px solid var(--sidebar-border-color);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.main {
+  flex: 1;
+  padding: 20px;
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.3s ease;
+  background: #f9f9f9;
+}
+
+.main.shifted {
+  margin-left: 0;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar.closed {
+    transform: translateX(-100%);
+    visibility: hidden;
+  }
+
+  .main,
+  .main.shifted {
+    margin-left: 0;
+  }
+}
+
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  background: transparent;
+  border: none;
+  color: var(--sidebar-text-color);
+  z-index: 1500;
+  cursor: pointer;
+}
+
+/* Adjust the home icons container style if needed */
+.home-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Adjust the individual home icon style if needed */
+.home-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.home-icon:hover {
+  background-color: var(--sidebar-link-hover-background-color);
+  border-radius: 10px;
+}
