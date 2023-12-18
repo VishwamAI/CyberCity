@@ -49,7 +49,8 @@ npm start
 
 - **v2.0 Beta (Coming Soon)**: Focus on the development of new applications while maintaining existing tools like BurpSuite.
 
-![image](https://github.com/Exploit0xfffff/CyberCity/assets/81065703/c26d7054-9cb5-4b7f-8bdb-49478f62d12f)
+![Screenshot from 2023-12-18 13-42-40](https://github.com/Exploit0xfffff/CyberCity/assets/81065703/a46cef74-7fbd-4385-a993-77036d820f21)
+
 
 it is coming a major things happend in this 
 - **v2.5.0 Beetroot**: Major UI improvements and further advancements in development.
